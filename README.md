@@ -135,14 +135,14 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
-**success** | _array_ of _string_| each element has a confirmation message, specifying which (**hardwareId**, **wirelessName**) pair was processed successfully
+**success** | _array_ of _string_| each element has a confirmation message, specifying which (**wirelessName****hardwareId**, **hardwareId**) pair was processed successfully
 
 **Mixed results:**
 
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which (**hardwareId**, **wirelessName**) pair caused the error, as well as details about the nature of the error
-**success** | _array_ of _string_ | each element has a confirmation message, specifying which (**hardwareId**, **wirelessName**) pair was processed successfully
+**error** | _array_ of _string_ | each element has an error message, specifying which (**wirelessName**, **hardwareId**) pair caused the error, as well as details about the nature of the error
+**success** | _array_ of _string_ | each element has a confirmation message, specifying which (**wirelessName**, **hardwareId**) pair was processed successfully
 
 
 ###C. EXAMPLES
@@ -248,7 +248,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which **hardwareId** or **wirelessName** caused the error, as well as the nature of that error
+**error** | _array_ of _string_ | each element has an error message, specifying which **wirelessName** or **hardwareId** caused the error, as well as the nature of that error
 **success** | JSON array | **meta** and **pins** retrieved for the valid request parameters
 
 
