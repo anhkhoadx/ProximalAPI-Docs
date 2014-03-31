@@ -78,8 +78,8 @@ At this moment the system supports the following standard types:
 PIN TYPE | DATA TYPE | VALUE(s) | DESCRIPTION
 -------- | --------- | -------- | -----------
 **image** | _string_ | max 255 chars | The path to an image file. Usually hosted on imgur.com, although any other server or image hosting service can be used.
-**text** | _text_ | max 65K chars | A generic textual message
-**url** | _string_ | max 255 chars | A generic URL path
+**text** | _text_ | max 65K chars | A generic textual message.
+**url** | _string_ | max 255 chars | A generic URL path.
 **audio** | _string_ | max 255 chars | A URL path to a streaming media resource: audio, video, pages from YouTube, Vimeo, etc.
 
 > **Note:** The **audio** pin type is scheduled to be changed to **streamingmedia**
