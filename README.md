@@ -82,7 +82,7 @@ PIN TYPE | DATA TYPE | VALUE(s) | DESCRIPTION
 **url** | _string_ | max 255 chars | A generic URL path
 **audio** | _string_ | max 255 chars | A URL path to a streaming media resource: audio, video, pages from YouTube, Vimeo, etc.
 
-> **Note:** The **audio** pin type is scheduled to be changed to **streamingMedia**
+> **Note:** The **audio** pin type is scheduled to be changed to **StreamingMedia**
 
 Further standard types are also scheduled to be added in the near future. Here is a preview for a few of them:
 
