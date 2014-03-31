@@ -111,9 +111,10 @@ Custom pins can be created on an array of 1 to 10 Wireless Name, Wireless Name ~
 
 Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requestor must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
 
-**Pins Use Combinations**
+**Pin Use Combinations**
  
-A wide range of new contextual awareness and device to device sharing of pin data is possible when custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as Bluetooth and Wi-Fi MAC addresses and iPhone based ibeacons in combination. Pins are designed to be used freely with no cost and no volume limits on their use.
+A wide range of new contextual awareness and device to device sharing of pin data is possible when custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as Bluetooth and Wi-Fi MAC addresses and iPhone-based ibeacons, in combination. Pins are designed to be used freely with no cost and no volume limits on their use.
+ 
    
 ---
 
