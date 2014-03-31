@@ -20,8 +20,8 @@ Our system supports at this moment three type of harwareIds:
 
 a) **MAC address**
 
-The most common harwareId used by our system is the MAC address. A **media access control address** (**MAC address**) is a unique identifier assigned to network interfaces for communications on the physical network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet; and in the case of Wi-Fi and Bluetooth, this MAC address is transmitted around many wireless devices to identify the device.
- 
+The most common harwareId used by our system is the MAC address. A **media access control address** (**MAC address**) is a unique identifier assigned to network interfaces for communications on the physical network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet; and in the case of Wi-Fi and Bluetooth devices, this MAC address is transmitted around the device to identify it to other devices in the immediate area.
+  
 There are many ways of writing a MAC address. For ease of reading, our system converts all valid MAC addresses to what we call _the normalized version_. This is a variant of the standard IEEE 802, with six groups of capitalized hexadecimal digits, separated by colons (:) in transmission order.
 
     A normalized MAC address:
