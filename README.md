@@ -147,10 +147,10 @@ SERVER TYPE | URL
 
 PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 --------- | ----------------- | ------- | -------- | -----------
-**devices** | required | _array_ | one or more valid **wirelessName** and **hardwareId** pairs | The set of identifiers for the devices where the content must be pinned
+**devices** | required | _array_ | one or more valid **wirelessName** and **hardwareID** pairs | The set of identifiers for the devices where the content must be pinned
 **wirelessName** | required | _string_ | valid Wireless Name | Wireless Name where the pin should be added
-**hardwareId** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added
-**listenerId** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
+**hardwareID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added
+**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
 **type** | required | _string_ | valid standard or custom pin type | Type of the pin being added
 **data** | required | _text_ | Max 65K chars | This is the content added, depending on the type used
 **label** | optional | _string_ | Max 255 chars open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content
@@ -168,14 +168,14 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
-**success** | _array_ of _string_| each element has a confirmation message, specifying which (**wirelessName****hardwareId**, **hardwareId**) pair was processed successfully
+**success** | _array_ of _string_| each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully
 
 **Mixed results:**
 
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which (**wirelessName**, **hardwareId**) pair caused the error, as well as details about the nature of the error
-**success** | _array_ of _string_ | each element has a confirmation message, specifying which (**wirelessName**, **hardwareId**) pair was processed successfully
+**error** | _array_ of _string_ | each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error
+**success** | _array_ of _string_ | each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully
 
 
 ###C. EXAMPLES
@@ -187,17 +187,17 @@ PARAMETER | TYPE(s)  | DESCRIPTION
             [0] => Array
                 (
                     [wirelessName] => 'wn 1'
-                    [hardwareId] => '6E:AA:40:F4:8F:DA'
+                    [hardwareID] => '6E:AA:40:F4:8F:DA'
                 )
 
             [1] => Array
                 (
                     [wirelessName] => 'wn 2'
-                    [hardwareId] => 'D8:16:13:AB:28:AD'
+                    [hardwareID] => 'D8:16:13:AB:28:AD'
                 )
 
         )
-    [listenerId] => 'B1:C2:FC:D9:CD:10'
+    [listenerID] => 'B1:C2:FC:D9:CD:10'
     [type] => 'image'
     [data] => 'https://reg.wirelessregistry.com/assets/img/default-pin.png'
 
@@ -210,8 +210,8 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 --------- | ----------------- | ------- | -------- | -----------
 **wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
-**hardwareIds** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
-**listenerId** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
+**hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
+**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
 **types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
 **startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The beginning of the time interval that will limit the request
 **endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The end of the time interval that will limit the request
@@ -261,14 +261,14 @@ PARAMETER | TYPE(s)  | DESCRIPTION
                 "addingDate": '02/17/2014'
             },
             {
-                "hardwareId": "6E:AA:40:F4:8F:DA",
+                "hardwareID": "6E:AA:40:F4:8F:DA",
                 "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
                 "label": "",
                 "type": "image",
                 "addingDate": '02/15/2014'
             },
             {
-                "hardwareId": "6E:AA:40:F4:8F:DA",
+                "hardwareID": "6E:AA:40:F4:8F:DA",
                 "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
                 "label": "",
                 "type": "image",
@@ -281,8 +281,8 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which **wirelessName** or **hardwareId** caused the error, as well as the nature of that error
-**success** | JSON array | **meta** and **pins** retrieved for the valid request parameters
+**error** | _array_ of _string_ | each element has an error message, specifying which **wirelessName** or **hardwareID** caused the error, as well as the nature of that error
+**success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters
 
 
 ###C. EXAMPLES
@@ -294,7 +294,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
             [0] => 'wn 1'
             [1] => 'wn 2'
         )
-    [hardwareIds] => Array
+    [hardwareIDs] => Array
         (
             [0] => '6E:AA:40:F4:8F:DA'
             [1] => 'D8:16:13:AB:28:AD'
@@ -304,6 +304,6 @@ PARAMETER | TYPE(s)  | DESCRIPTION
             [0] => 'image'
             [1] => 'custom-type-label-of-my-own-design'
         )
-    [listenerId] => 'B1:C2:FC:D9:CD:10'
+    [listenerID] => 'B1:C2:FC:D9:CD:10'
     [startDate] => '01/01/2014'
     [endDate] => '01/31/2014'
