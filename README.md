@@ -82,7 +82,7 @@ PIN TYPE | DATA TYPE | VALUE(s) | DESCRIPTION
 **url** | _string_ | max 255 chars | A generic URL path
 **audio** | _string_ | max 255 chars | A URL path to a streaming media resource: audio, video, pages from YouTube, Vimeo, etc.
 
-> **Note:** The **audio** pin type is scheduled to be changed to **StreamingMedia**
+> **Note:** The **audio** pin type is scheduled to be changed to **streamingmedia**
 
 Further standard types are also scheduled to be added in the near future. Here is a preview for a few of them:
 
@@ -99,6 +99,8 @@ Further standard types are also scheduled to be added in the near future. Here i
 **Custom Pins**
 
 In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **a minimum length of 25 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
+
+Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, pins 
 
 ---
 
