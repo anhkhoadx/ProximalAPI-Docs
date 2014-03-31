@@ -103,35 +103,24 @@ It is important to note that the API can also be queried with no pin type parame
 
 **Custom Pins**
 
-In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
+In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **a minimum length of 25 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
 
 Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
  
 Custom pins can be created on an array of 1 to 10 Wireless Name, Wireless Name ~ Hardware ID, or Hardware ID alone combinations at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct pin type known only to that app.
 
 Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requestor must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
- 
 
+**Pins Use Combinations**
+ 
+A wide range of new contextual awareness and device to device sharing of pin data is possible when custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as Bluetooth and Wi-Fi MAC addresses and iPhone based ibeacons in combination. Pins are designed to be used freely with no cost and no volume limits on their use.
+   
 ---
 
-##End Points
+##Entry Points
 
-Each API method has two end points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores.
-
-###1. POST v2/wns/pins
-
-SERVER TYPE | URL
------------ | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins
-
-
-###2. GET v2/wns/pins
-
-SERVER TYPE | URL
------------ | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins
+1. POST v2/wns/pins - http://stagingapi.wirelessregistry.com/api/v2/wns/pins
+2. GET v2/wns/pins - http://stagingapi.wirelessregistry.com/api/v2/wns/pins
 
 ---
 
