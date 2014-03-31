@@ -103,7 +103,7 @@ It is important to note that the API can also be queried with no pin type parame
 
 **Custom Pins**
 
-In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **a minimum length of 25 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
+In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
 
 Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
  
@@ -114,10 +114,24 @@ Note that unlike standard pins, custom pins can never be retrieved without being
 
 ---
 
-##Entry Points
+##End Points
 
-1. POST v2/wns/pins - http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-2. GET v2/wns/pins - http://stagingapi.wirelessregistry.com/api/v2/wns/pins
+Each API method has two end points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores.
+
+###1. POST v2/wns/pins
+
+SERVER TYPE | URL
+----------- | ---------------
+**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
+**production** | https://api.wirelessregistry.com/api/v2/wns/pins
+
+
+###2. GET v2/wns/pins
+
+SERVER TYPE | URL
+----------- | ---------------
+**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
+**production** | https://api.wirelessregistry.com/api/v2/wns/pins
 
 ---
 
