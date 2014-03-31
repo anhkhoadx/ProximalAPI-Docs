@@ -4,12 +4,14 @@
 
 ###Definitions
 
+The Wireless Registry Proximal API allows the association of content to wireless ID strings and the subsequent retrieval of this content. Wireless devices generally detect wireless names and hardware IDs around them in a range of combinations - from Wi-Fi Names, Bluetooth names, and MAC addresses, to iBeacon IDs and a number of similar wireless expressions and IDs to come via new technologies and standards. The Proximal API outlined here is the first open API that allows any device to both create and retrieve associations to any signal, while at the same time respecting an industry approved opt-out mechanism, and enabling the full control of associated content by the registered owners of the signals involved. 
+   
 The Proximal API makes use of several concepts, that are defined below.
-
+  
 ####1. Wireless Name
 
-A wireless name is a word or phrase from one to thirty-two characters in length that typically corresponds to the SSID (Service Set Identifier) of your device. SSIDs are often referred to as “network names” and are broadcast by your device to all receiving devices within the broadcast radius of your device’s networking hardware.
-
+A wireless name is a word or phrase from one to thirty-two characters (32 bytes) in length that typically corresponds to the SSID (Service Set Identifier) of your device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of a device’s networking hardware.
+ 
 A new device typically has an SSID that is set by default by the device manufacturer. This SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs and wireless network routers in the home or office.
 
 ####2. Hardware Id
