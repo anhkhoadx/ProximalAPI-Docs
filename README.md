@@ -107,7 +107,8 @@ Custom pin types are defined by the API user and these pins cannot be retrieved 
  
 Custom pins can be created on an array of 1 to 10 WirelessName, WirelessName~HardwareID, or HardwareID alone combination at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct pin type known only to that app.
 
-Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requestor must know the custom pin type and query for that type. There are no pin type ranges or wildcards at this time.
+Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requestor must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
+ 
 
 ---
 
