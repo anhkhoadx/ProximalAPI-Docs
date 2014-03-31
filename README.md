@@ -10,14 +10,14 @@ The Proximal API makes use of several concepts, that are defined below.
   
 ####1. Wireless Name
 
-a)##### Wi-Fi and Bluetooth Names
-
+a) **Wi-Fi and Bluetooth Names**
+ 
 A Wireless Name is a word or phrase transmitted from a Wireless Device as an ID string or form of device or network identification. Currently the Proximal API responds to one to thirty-two characters (32 bytes) in length that typically corresponds to the SSID (Service Set Identifier) of a Wi-Fi or Bluetooth device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of a device’s networking hardware.
  
 A new device typically has an SSID that is set by default by the device manufacturer. This SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs and wireless network routers in the home or office.
 
-b)##### iBeacon
-
+b) **iBeacon and BLE Beacon Names**
+ 
 A special type of Wireless Name that we accept is the iBeacon. iBeacon is the Apple Trademark for an indoor positioning system that Apple Inc. calls "a new class of low-powered, low-cost transmitters that can notify nearby iOS 7 devices of their presence." They can also be used, in a limited manner, by the Android operating system. The technology enables an iOS device or other hardware to send push notifications to iOS devices in close proximity.
 
 The accepted format for an iBeacon Wireless Name is to split it in groups of digits according to the formula: 8-4-4-12~5~5. All groups are hexadecimal, with the exception of the last two groups of 5 decimal digits. These two groups are usally called the Major and Minor values, in that order, and take values between 00000 and 65535.
