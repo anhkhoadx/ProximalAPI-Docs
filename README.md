@@ -97,6 +97,8 @@ Further standard types are also scheduled to be added in the near future. Here i
 
 Standard pins must be created on a single WirelessName or WirelessName~HardwareID combination at a time. An example of a standard pin would be pining a picture to the WirelessName of a restaurant. Any app on any device can check the open API for content associated with the WirelessName of the restaurant and will get the pin immediately. 
 
+It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins, but only standard pins.
+
 **Custom Pins**
 
 In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **a minimum length of 25 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
@@ -104,6 +106,8 @@ In addition to the standard pin types, we also allow custom pin types to be set 
 Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
  
 Custom pins can be created on an array of 1 to 10 WirelessName, WirelessName~HardwareID, or HardwareID alone combination at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct pin type known only to that app.
+
+Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requestor must know the custom pin type and query for that type. There are no pin type ranges or wildcards at this time.
 
 ---
 
