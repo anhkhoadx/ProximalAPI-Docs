@@ -10,7 +10,7 @@ The Proximal API makes use of several concepts, that are defined below.
   
 ####1. Wireless Name
 
-A wireless name is a word or phrase from one to thirty-two characters (32 bytes) in length that typically corresponds to the SSID (Service Set Identifier) of your device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of a device’s networking hardware.
+A wireless name is a word or phrase transmitted from a Wireless Device as an ID string or form of device or network identification. Currently the Proximal API responds to one to thirty-two characters (32 bytes) in length that typically corresponds to the SSID (Service Set Identifier) of a Wi-Fi or Bluetooth device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of a device’s networking hardware.
  
 A new device typically has an SSID that is set by default by the device manufacturer. This SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs and wireless network routers in the home or office.
 
@@ -20,8 +20,8 @@ Our system supports at this moment three type of harwareIds:
 
 a) **MAC address**
 
-The most common harwareId used by our system is the MAC address. A **media access control address** (**MAC address**) is a unique identifier assigned to network interfaces for communications on the physical network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
-
+The most common harwareId used by our system is the MAC address. A **media access control address** (**MAC address**) is a unique identifier assigned to network interfaces for communications on the physical network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet; and in the case of Wi-Fi and Bluetooth, this MAC address is transmitted around many wireless devices to identify the device.
+ 
 There are many ways of writing a MAC address. For ease of reading, our system converts all valid MAC addresses to what we call _the normalized version_. This is a variant of the standard IEEE 802, with six groups of capitalized hexadecimal digits, separated by colons (:) in transmission order.
 
     A normalized MAC address:
