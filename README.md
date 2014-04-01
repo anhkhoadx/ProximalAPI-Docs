@@ -73,9 +73,9 @@ Some developers attach lists of wireless identifiers of one type to wireless ide
 
 #####Pin Security and Treatment
 
-The API respects the World's first industry accepted proximal signal privacy and opt-out system which is managed by the Future of Privacy Forum in Washington, DC. Mobile detection data analytics companies from around the world are part of this system which protects the privacy of individuals who register their proximal signals. Developers using the Proximal API are automatically covered by this industry leading privacy best practice. Please see www.futureofprivacy.org for more detailed information.
+The API respects the World's first industry accepted proximal signal privacy and opt-out system which is managed by the Future of Privacy Forum in Washington, DC. Mobile detection data analytics companies from around the world are part of this system which protects the privacy of individuals who register their proximal signals. Developers using the Proximal API are **automatically covered by this industry leading privacy best practice**. Please see www.futureofprivacy.org for more detailed information.
  
-The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API respects the content the owners proactively associate and respects their privacy settings throughout.
+The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API **respects the content the owners proactively manage** and respects their privacy settings throughout.
  
 The proximal API is un-metered and free. The system is supported via an Wireless Registry ownership model rather than an API usage-based model. Standard pins are secured via the wireless name owner having full control of all standard pins regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they they control the management of.
   
@@ -109,9 +109,9 @@ Further standard types are also scheduled to be added in the near future. Here i
 
 ...and many more.
 
-Standard pins must be created on a single Wireless Name or Wireless Name ~ Hardware ID combination at a time. An example of a standard pin would be pining a picture to the Wireless Name of a restaurant. Any app on any device can check the open API for content associated with the Wireless Name of the restaurant and will get the pin immediately. 
+Standard pins must be created on a single Wireless Name or Wireless Name ~ Hardware ID combination at a time. An example of a standard pin would be pining a picture to the Wireless Name of a restaurant. Any app on any device can check the open API for content associated with the Wireless Name of the restaurant and will get the pin immediately and could render the picture. 
 
-It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins, but only standard pins.
+It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins associated to the Wireless Name checked, but only standard pins.
 
 **Custom Pins**
 
@@ -119,15 +119,18 @@ In addition to the standard pin types, we also allow custom pin types to be set 
 
 Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
  
-Custom pins can be created on an array of 1 to 10 Wireless Name, Wireless Name ~ Hardware ID, or Hardware ID alone combinations at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct pin type known only to that app.
+Custom pins can be created on an array of 1 to 10 Wireless Name, Wireless Name ~ Hardware ID, or Hardware ID alone combinations at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct custom pin type known only to that app.
 
-Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requestor must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
+Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requester must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
 
 **Pin Use Combinations**
  
-A wide range of new contextual awareness and device to device sharing of pin data is possible when custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as Bluetooth and Wi-Fi MAC addresses and iPhone-based ibeacons, in combination. Pins are designed to be used freely with no cost and no volume limits on their use.
- 
-   
+When custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as MAC addresses and iPhone-based ibeacons, a wide range of new contextual awareness and device-to-device sharing of pin data is possible.
+
+Creative uses of pins allow 2 mobile app installs to deduce the are immediately proximal via detecting the same 2 or 3 ambient signals - quickly and GPS or check-in free. Other applications pin custom triggers such as game tokens to ambient signals that persist for days or months that other running apps detect when checking ambient signals. Still others pin usernames or statistics so other devices can see how many users are or have been in a location over a defined period.
+
+The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywhere a data connection is available - completely GPS, battery drain, and manual check-in free. The API will continue to expand supported Wireless Name an Hardware ID formats, adding Zigbee IDs in 2014 and LTE Direct Expressions in 2015.
+    
 ---
 
 ##Entry Points
