@@ -322,7 +322,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 ---
 
-##3. GET v2/wns/pins
+##3. GET v2/wns/pins?count
 
 ###A. Parameters
 
