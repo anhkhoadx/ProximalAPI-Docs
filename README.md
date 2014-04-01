@@ -71,13 +71,14 @@ Some developers pin codes that represent content on their servers so that any in
  
 Some developers attach lists of wireless identifiers of one type to wireless identifiers of another type - so the detection of a Wi-Fi signal might reveal a list of NFC codes in a room pinned by another device which detected both.
 
-####3. Pin Security and Treatment
+#####Pin Security and Treatment
 
 The API respects the World's first industry accepted proximal signal privacy and opt-out system which is managed by the Future of Privacy Forum in Washington, DC. Mobile detection data analytics companies from around the world are part of this system which protects the privacy of individuals who register their proximal signals. Developers using the Proximal API are automatically covered by this industry leading privacy best practice. Please see www.futureofprivacy.org for more detailed information.
  
 The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API respects the content the owners proactively associate and respects their privacy settings throughout.
-
-
+ 
+The proximal API is un-metered and free. The system is supported via an ownership model rather than a usage based model. Standard pins are secured via the wireless name owner having full control of all standard pins regardless of their source. Custom pins are secured via developers using complex and secure pin types they they control the management of.
+  
 #####Pin types
 
 Our system supports two main categories of pins: **standard pins** and **custom pins**.
