@@ -131,6 +131,7 @@ Creative uses of pins allow 2 mobile app installs to deduce the are immediately 
 
 The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywhere a data connection is available - completely GPS, battery drain, and manual check-in free. The API will continue to expand supported Wireless Name an Hardware ID formats, adding Zigbee IDs in 2014 and LTE Direct Expressions in 2015.
     
+ 
 ---
 
 ##Entry Points
