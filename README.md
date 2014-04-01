@@ -127,16 +127,16 @@ Note that unlike standard pins, custom pins can never be retrieved without being
  
 When custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as MAC addresses and iPhone-based ibeacons, a wide range of new contextual awareness and device-to-device sharing of pin data is possible.
 
-Creative uses of pins allow 2 mobile app installs to deduce the are immediately proximal via detecting the same 2 or 3 ambient signals - quickly and GPS or check-in free. Other applications pin custom triggers such as game tokens to ambient signals that persist for days or months that other running apps detect when checking ambient signals. Still others pin usernames or statistics so other devices can see how many users are or have been in a location over a defined period.
+Creative uses of pins allow 2 mobile app installs to deduce the are immediately proximal via detecting the same 2 or 3 ambient signals - quickly and without the need for GPS check-ins. Other applications pin custom triggers such as game tokens to ambient signals that persist for days or months that other running apps detect when checking ambient signals. Still others pin usernames or statistics so other devices can see how many users are or have been in a location over a defined period.
 
-The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywhere a data connection is available - completely GPS, battery drain, and manual check-in free. The API will continue to expand supported Wireless Name an Hardware ID formats, adding Zigbee IDs in 2014 and LTE Direct Expressions in 2015.
-    
- 
+The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywhere a data connection is available - completely GPS, battery drain, and check-in free. The API will continue to expand the list of supported Wireless Name and Hardware ID formats, adding Zigbee IDs in 2014 and LTE Direct Expressions in 2015.
+     
+  
 ---
 
 ##Entry Points
 
-Each API method has two entry points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores.
+Each API method has two entry points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores. The production servers will be available April 12th, 2014.
   
 ###1. POST v2/wns/pins
 
