@@ -77,7 +77,7 @@ The API respects the World's first industry accepted proximal signal privacy and
  
 The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API respects the content the owners proactively associate and respects their privacy settings throughout.
  
-The proximal API is un-metered and free. The system is supported via an ownership model rather than a usage based model. Standard pins are secured via the wireless name owner having full control of all standard pins regardless of their source. Custom pins are secured via developers using complex and secure pin types they they control the management of.
+The proximal API is un-metered and free. The system is supported via an Wireless Registry ownership model rather than an API usage-based model. Standard pins are secured via the wireless name owner having full control of all standard pins regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they they control the management of.
   
 #####Pin types
 
