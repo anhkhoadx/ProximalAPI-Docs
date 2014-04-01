@@ -18,9 +18,9 @@ A new device typically has an SSID that is set by default by the device manufact
 
 b) **iBeacon and BLE Beacon Names**
  
-A special type of Wireless Name that we accept is the iBeacon. iBeacon is the Apple Trademark for an indoor positioning system that Apple Inc. calls "a new class of low-powered, low-cost transmitters that can notify nearby iOS 7 devices of their presence." They can also be used, in a limited manner, by the Android operating system. The technology enables an iOS device or other hardware to send push notifications to iOS devices in close proximity.
+The API will respond to BLE or Bluetooth Smart identifiers. The first set of identifiers included is a special type of Wireless Name called iBeacon. iBeacon is the Apple Trademark for an indoor positioning system that Apple Inc. calls "a new class of low-powered, low-cost transmitters that can notify nearby iOS 7 devices of their presence." They can also be used, in a limited manner, by the Android operating system. The technology enables an iOS device or other hardware to send push notifications to iOS devices in close proximity.
 
-The accepted format for an iBeacon Wireless Name is to split it in groups of digits according to the formula: 8-4-4-12~5~5. All groups are hexadecimal, with the exception of the last two groups of 5 decimal digits. These two groups are usally called the Major and Minor values, in that order, and take values between 00000 and 65535.
+The accepted format for an iBeacon Wireless Name is to split it in groups of digits according to the formula: 8-4-4-12~5~5. All groups are hexadecimal, with the exception of the last two groups of 5 decimal digits. These two groups are usually called the Major and Minor values, in that order, and take values between 00000 and 65535.
 
     Example of an iBeacon Wireless Name:
 
