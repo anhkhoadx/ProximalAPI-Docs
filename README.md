@@ -65,7 +65,7 @@ See http://en.wikipedia.org/wiki/IMEI for more details about IMEI.
 
 ####3. Pins
 
-A pin is an information token that is attached to a Wireless Name or a Hardware ID
+A pin is an information token that is attached to a Wireless Name or a Hardware ID, or a combination of both Wireless Name and Hardware ID. Pins are the basic unit that is accepted by the API. Pins are designed to hold ID strings or linkages to any content that is hosted anywhere on the internet. 
 
 #####Pin types
 
