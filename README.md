@@ -138,6 +138,14 @@ SERVER TYPE | URL
 **production** | https://api.wirelessregistry.com/api/v2/wns/pins
 
 
+###3. GET v2/wns/pins?count
+
+SERVER TYPE | URL
+----------- | ---------------
+**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins?count
+**production** | https://api.wirelessregistry.com/api/v2/wns/pins?count
+
+
 ---
 
 
@@ -154,6 +162,8 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **type** | required | _string_ | valid standard or custom pin type | Type of the pin being added
 **data** | required | _text_ | Max 65K chars | This is the content added, depending on the type used
 **label** | optional | _string_ | Max 255 chars open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content
+
+> **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
 
 ###B. RESPONSE
@@ -273,6 +283,109 @@ PARAMETER | TYPE(s)  | DESCRIPTION
                 "label": "",
                 "type": "image",
                 "addingDate": '02/25/2014'
+            }
+        ]
+    }
+
+**Mixed results:**
+
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**error** | _array_ of _string_ | each element has an error message, specifying which **wirelessName** or **hardwareID** caused the error, as well as the nature of that error
+**success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters
+
+
+###C. EXAMPLES
+
+**Generic valid data structure**
+
+    [wirelessNames] => Array
+        (
+            [0] => 'wn 1'
+            [1] => 'wn 2'
+        )
+    [hardwareIDs] => Array
+        (
+            [0] => '6E:AA:40:F4:8F:DA'
+            [1] => 'D8:16:13:AB:28:AD'
+        )
+    [types] => Array
+        (
+            [0] => 'image'
+            [1] => 'custom-type-label-of-my-own-design'
+        )
+    [listenerID] => 'B1:C2:FC:D9:CD:10'
+    [startDate] => '01/01/2014'
+    [endDate] => '01/31/2014'
+
+
+
+---
+
+##3. GET v2/wns/pins
+
+###A. Parameters
+
+PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
+--------- | ----------------- | ------- | -------- | -----------
+**wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
+**hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
+**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
+**types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
+**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The beginning of the time interval that will limit the request
+**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The end of the time interval that will limit the request
+
+
+###B. RESPONSE
+
+**Fatal Error:**
+
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**error** | _string_ | short description of the fatal error
+
+
+**Success:**
+
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**
+**meta** | JSON _array_ | Contains metainformation about the result
+**pins** | JSON _array_ | Contains the pins retrieved by the request
+
+
+    {
+        "meta": {
+            "count": 6
+        },
+        "pins": [
+            {
+                "wirelessName": "test",
+                "count": 0
+            },
+            {
+                "wirelessName": "myotherrideisatitan",
+                "count": 0
+            },
+            {
+                "hardwareID": "6E:AA:40:F4:8F:DA",
+                "type": "image",
+                "count": 2
+            },
+            {
+                "hardwareID": "6E:AA:40:F4:8F:DA",
+                "type": "text",
+                "count": 1
+            },
+            {
+                "hardwareID": "D8:16:1A:B2:8C:AD",
+                "type": "image",
+                "count": 2
+            },
+            {
+                "hardwareID": "D8:16:1A:B2:8C:AD",
+                "type": "text",
+                "count": 1
             }
         ]
     }
