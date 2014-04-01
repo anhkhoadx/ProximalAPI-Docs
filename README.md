@@ -65,7 +65,18 @@ See http://en.wikipedia.org/wiki/IMEI for more details about IMEI.
 
 ####3. Pins
 
-A pin is an information token that is attached to a Wireless Name or a Hardware ID, or a combination of both Wireless Name and Hardware ID. Pins are the basic unit that is accepted by the API. Pins are designed to hold ID strings or linkages to any content that is hosted anywhere on the internet. 
+A pin is an information token that is attached to a Wireless Name or a Hardware ID, or a combination of both Wireless Name and Hardware ID. Pins are the basic unit that is accepted by the API. Pins are text strings from 1-65k characters and while standard pin types expect linkages to the matching type of content for that pin type, custom pins can hold any combination codes and information that a developer would like to use. A wide range of use cases is possible.
+
+Some developers pin codes that represent content on their servers so that any instance of their application can check surrounding detectable signals and retrieve those codes left by other instances of their app on the same signals -  providing app to app communication without GPS or check-ins. 
+ 
+Some developers attach lists of wireless identifiers of one type to wireless identifiers of another type - so the detection of a Wi-Fi signal might reveal a list of NFC codes in a room pinned by another device which detected both.
+
+####3. Pin Security and Treatment
+
+The API respects the World's first industry accepted proximal signal privacy and opt-out system which is managed by the Future of Privacy Forum in Washington, DC. Mobile detection data analytics companies from around the world are part of this system which protects the privacy of individuals who register their proximal signals. Developers using the Proximal API are automatically covered by this industry leading privacy best practice. Please see www.futureofprivacy.org for more detailed information.
+ 
+The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API respects the content the owners proactively associate and respects their privacy settings throughout.
+
 
 #####Pin types
 
