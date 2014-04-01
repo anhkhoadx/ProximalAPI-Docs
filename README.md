@@ -16,7 +16,7 @@ A Wireless Name is a word or phrase transmitted from a Wireless Device as an ID 
  
 A new device typically has an SSID that is set by default by the device manufacturer. This SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs and wireless network routers in the home or office.
 
-b) **iBeacon and BLE Beacon Names**
+b) **iBeacon and BLE Names**
  
 The API will respond to BLE or Bluetooth Smart identifiers. The first set of identifiers included is a special type of Wireless Name called iBeacon. iBeacon is the Apple Trademark for an indoor positioning system that Apple Inc. calls "a new class of low-powered, low-cost transmitters that can notify nearby iOS 7 devices of their presence." They can also be used, in a limited manner, by the Android operating system. The technology enables an iOS device or other hardware to send push notifications to iOS devices in close proximity.
 
