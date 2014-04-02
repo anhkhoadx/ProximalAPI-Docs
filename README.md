@@ -113,7 +113,7 @@ Standard pins must be created on a single Wireless Name or Wireless Name ~ Hardw
 
 It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins associated to the Wireless Name checked, but only standard pins.
 
-**Custom Pins**
+b) **Custom Pins**
 
 In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
 
