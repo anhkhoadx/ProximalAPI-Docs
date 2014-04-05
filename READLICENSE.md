@@ -1,15 +1,13 @@
-#Proximal API v2.0
-
-##Introduction
-
 ###Definitions
 
-THE WIRELESS REGISTRY, INC.
+##THE WIRELESS REGISTRY, INC.
 
-PROXIMAL API LICENSE AGREEMENT 
+###Proximal API v2.0 - API LICENSE AGREEMENT
+
 READ THIS CAREFULLY BEFORE USING THE PROXIMAL API OR OTHER THE WIRELESS REGISTRY SERVICES OR OTHER THE WIRELESS REGISTRY MATERIALS.
 BY INTERACTING IN ANY WAY WITH THE PROXIMAL API OUTLINED HERE, YOU OR THE COMPANY THAT YOU REPRESENT, YOU UNCONDITIONALLY CONSENT AND AGREE TO BE BOUND BY AND BE A PARTY TO THE TERMS AND CONDITIONS CONTAINED IN THIS AGREEMENT.  THIS AGREEMENT INCORPORATES THE WIRELESS REGISTRY TERMS OF SERVICE AND THE WIRELESS REGISTRY PRIVACY POLICY.  IF YOU DO NOT AGREE TO ALL OF THESE TERMS AND CONDITIONS, YOU ARE NOT AUTHORIZED TO USE THE API.
 DEFINITIONS
+ 
 “Agreement” means this Agreement, as amended, modified, supplemented or restated from time to time.
 “Application Program Interface” means an application program interface that the Licensee’s application program may use to make a resources request from TWR. An Application Program Interface may include coding, specifications for routines, data structures, object classes, and protocols used to communicate between programs. 
 “Disclosing Party” means the Party who furnishes Confidential Information to the other Party.
