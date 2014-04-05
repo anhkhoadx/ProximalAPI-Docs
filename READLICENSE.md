@@ -4,437 +4,86 @@
 
 ###Definitions
 
-The Wireless Registry Proximal API allows the association of content to wireless ID strings and the subsequent retrieval of this content. Wireless devices generally detect Wireless Names and Hardware IDs around them in a range of combinations. These signals vary from Wi-Fi Names, Bluetooth names, and MAC addresses, to iBeacon IDs and a number of similar wireless expressions and IDs to come via new technologies and standards. The Proximal API outlined here is the first open API that allows any device to both create and retrieve associations to any signal, while at the same time respecting an industry approved opt-out mechanism, and enabling the full control of associated content by the registered owners of the signals involved. 
+THE WIRELESS REGISTRY, INC.
 
-**The API outlined below is V2.0, with V3.0 to be released to private test partners in mid-April, 2014. V3 will be the full REST version scheduled for public launch on May 05, 2014. At this time a developer portal will also be available on the main WirelessRegistry.com website.**
-     
-The Proximal API makes use of several concepts, that are defined below.
-  
-####1. Wireless Name
+PROXIMAL API LICENSE AGREEMENT 
+READ THIS CAREFULLY BEFORE USING THE PROXIMAL API OR OTHER THE WIRELESS REGISTRY SERVICES OR OTHER THE WIRELESS REGISTRY MATERIALS.
+BY INTERACTING IN ANY WAY WITH THE PROXIMAL API OUTLINED HERE, YOU OR THE COMPANY THAT YOU REPRESENT, YOU UNCONDITIONALLY CONSENT AND AGREE TO BE BOUND BY AND BE A PARTY TO THE TERMS AND CONDITIONS CONTAINED IN THIS AGREEMENT.  THIS AGREEMENT INCORPORATES THE WIRELESS REGISTRY TERMS OF SERVICE AND THE WIRELESS REGISTRY PRIVACY POLICY.  IF YOU DO NOT AGREE TO ALL OF THESE TERMS AND CONDITIONS, YOU ARE NOT AUTHORIZED TO USE THE API.
+DEFINITIONS
+“Agreement” means this Agreement, as amended, modified, supplemented or restated from time to time.
+“Application Program Interface” means an application program interface that the Licensee’s application program may use to make a resources request from TWR. An Application Program Interface may include coding, specifications for routines, data structures, object classes, and protocols used to communicate between programs. 
+“Disclosing Party” means the Party who furnishes Confidential Information to the other Party.
+“Documentation” means manuals, training materials, product literature, coding instructions, schematics, and drawings that describe or relate to the products and or Services offered hereunder and to their installation, use, operation, features, functionality, capabilities, and maintenance, whether in hard copy or electronic form, as such Documentation may be supplemented, updated, modified or replaced from time to time.   
+“Placeholder” 
+“Party”, in its singular or plural form, means either TWR or Licensee, or both, as appropriate in the context.
+“Receiving Party” means the Party who receives Confidential Information from the Disclosing Party.  
+“Service(s)” or “TWR Service(s)” means any product or service offered by TWR, accessed by the API, and licensed, and or purchased by You.  
 
-a) **Wi-Fi and Bluetooth Names**
- 
-A Wireless Name is a word or phrase transmitted from a Wireless Device as an ID string or form of device or network identification. Currently the Proximal API responds to one to thirty-two characters (32 bytes) in length that typically corresponds to the SSID (Service Set Identifier) of a Wi-Fi or Bluetooth device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of a device’s networking hardware.
- 
-A new device typically has an SSID that is set by default by the device manufacturer. This SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs and wireless network routers in the home or office.
+LICENSE GRANT.  Subject to Your full compliance with all of the terms and conditions of this PROXIMAL API Agreement (“Agreement”), the Wireless Registry Terms of Service and the Wireless Registry Privacy Policy, The Wireless Registry, Inc. (“TWR”) grants Licensee a non-exclusive, non-sublicensable, nontransferable, revocable, limited license to download and use the TWR PROXIMAL Application Programming Interface, Documentation, support and other materials provided by TWR (collectively, “API”) to solely to develop and support applications, websites and/or services (collectively, “Applications”) that utilize or interoperate with, the TWR Service.   Use of the API for any other purpose, including but not limited to, the development of a software application or other software program for use with a platform or service other than the Service is strictly prohibited.  
 
-b) **iBeacon and BLE Names**
- 
-The API will respond to BLE or Bluetooth Smart identifiers. The first set of identifiers included is a special type of Wireless Name called iBeacon. iBeacon is the Apple Trademark for an indoor positioning system that Apple Inc. calls "a new class of low-powered, low-cost transmitters that can notify nearby iOS 7 devices of their presence." They can also be used, in a limited manner, by the Android operating system. The technology enables an iOS device or other hardware to send push notifications to iOS devices in close proximity.
+PROPRIETARY RIGHTS.  As between TWR and Licensee, the API, the TWR Service, any and all content, documentation, code, data, and related materials made available through the API, any and all data and information collected and/or derived from the TWR Service, TWR know-how, and all intellectual property rights in and to all of the foregoing, are and shall at all times remain the sole and exclusive property of TWR and are protected by intellectual property laws and treaties.  You agree to promptly notify TWR in the event You suspect or become aware of any misuse of the API or the Service or any violation, infringement or misappropriation of TWR’s proprietary rights by any third party.
 
-The accepted format for an iBeacon Wireless Name is to split it in groups of digits according to the formula: 8-4-4-12~5~5. All groups are hexadecimal, with the exception of the last two groups of 5 decimal digits. These two groups are usually called the Major and Minor values, in that order, and take values between 00000 and 65535.
+ACCESS.  In order to access and use the API, You must register with TWR and expressly accept this Agreement, which incorporates by reference The Wireless Registry Terms of Service and The Wireless Registry Privacy Policy.  Use of the API will be revoked or terminated by TWR if You share the same with any third party, if compromised by a third party, or if You use or access the API or Service in any way not expressly permitted or granted under this Agreement.
 
-    Example of an iBeacon Wireless Name:
+OTHER RESTRICTIONS.  Except as expressly and unambiguously authorized under this Agreement, Licensee may not (i) copy, rent, lease, sell, transfer, assign, sublicense, disassemble, reverse engineer or decompile (except to the limited extent expressly authorized by applicable statutory law), modify or alter any part of the API; (ii) create derivative works from the API or the Service or any other TWR intellectual property or any aspect or portion thereof, including without limitation, source code and algorithms; (iii) otherwise use the API on behalf of a third party; or (iv) design or permit the Licensee’s Application(s) to disable, override or otherwise interfere with any TWR-implemented communications to end users, consent panels, user settings, alerts, warnings or the like, including, but limited to, those intended to notify the end user that his or her data are being collected or used, or intended to obtain consent for such collection or use.   TWR expressly reserves the right to limit the number and/or frequency of API requests in its sole discretion.  
 
-    E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00000~00000
+RESERVATION OF RIGHTS.   TWR reserves all rights not expressly granted to Licensee under this Agreement.  Nothing in this Agreement limits in any way TWR’s rights to develop, use, license, create derivative works of, or otherwise exploit TWR intellectual property or to permit third parties to do so.   
 
-See http://en.wikipedia.org/wiki/IBeacon for more details about iBeacon.
+MODIFICATIONS TO THIS AGREEMENT.   TWR reserves the right, in its sole discretion, to modify this Agreement, the API and the Service at any time with or without notice by posting a notice to www.wirelessregistry.com/wns_controller_Proximal_API. Licensee shall be responsible for reviewing and becoming familiar with any such modifications. Such modifications are effective upon first posting or notification; use of the API by Licensee following any such modification constitutes Licensee’s acceptance of the terms and conditions of this Agreement as so modified.  The API is currently provided for free, but The Wireless Registry reserves the right to charge for the API (or additional features or functionality therefor) in the future.  
 
-####2. Hardware ID
+REPRESENTATIONS, WARRANTIES AND COVENANTS.  You represent and warrant that: (i) You have the necessary power and authority to enter into this Agreement, and that the performance of Your obligations will not constitute a breach or otherwise violate any other agreement or rights of any third party; and (ii) that You shall at all times comply with all laws and regulations applicable to Your products and/or services, related promotional activities and Your performance under this Agreement.  
 
-Our system supports at this moment two main types of Hardware IDs:
+CONFIDENTIAL INFORMATION
+Definition.  "Confidential Information" means: (1) this Agreement and the discussions, negotiations and proposals related to this Agreement; and (2) any information exchanged in connection with this Agreement concerning the Parties’ business, including, without limitation, trial results, tangible, intangible, visual, electronic, written, oral, present, or future information such as (i) trade secrets, (ii) financial information and pricing, (iii) technical information, such as research, development, procedures, algorithms, data, designs, and know-how, (iv) business information, such as operations, planning, marketing interests, business plans and products.  Confidential Information does not include information that is: (a) rightfully known to the receiving party prior to negotiations leading up to this Agreement, (b) independently developed by the Receiving Party without any reliance on the Confidential Information, (c) part of the public domain or is lawfully obtained by the Receiving Party from a third party not under an obligation of confidentiality; or (d) free of confidentiality restrictions by agreement of the Disclosing Party.
+Treatment of Confidential Information.  Each Party acknowledges that while performing its obligations under this Agreement it may have access to the other Party’s Confidential Information.  With respect to all Confidential Information, the Parties agree as follows:
+The Receiving Party may use the Confidential Information only to perform its obligations under this Agreement.  The Receiving Party must use at least the same care to protect the Disclosing Party’s Confidential Information as it uses to protect its own Confidential Information.  In no event will the Receiving Party fail to use reasonable care to avoid unauthorized use, including disclosure, loss, or alteration of the Disclosing Party’s Confidential Information. 
+TWR may disclose Licensee Confidential Information to TWR affiliates, agents, contractors and legal representatives, if they have a need to know and an obligation to protect the Confidential Information that is at least as restrictive as this Agreement.  Licensee may disclose TWR Confidential Information to Licensee employees if they have a need to know and obligation to protect the Confidential Information that is at least as restrictive as this Agreement.
+Upon the expiration or termination of this Agreement or written request, the Receiving Party will return or destroy, at its option, all Confidential Information of the Disclosing Party.  Upon request of the Disclosing Party, the Receiving Party will furnish an officer’s certificate certifying that the Disclosing Party’s Confidential Information has been returned or destroyed.
+Injunctive Relief.  Each party agrees that the wrongful disclosure of Confidential Information may cause irreparable injury that is inadequately compensable in monetary damages.  Accordingly, either Party may seek injunctive relief (including without limitation a temporary restraining order or any other similar provisional or precautionary measures) in any court of competent jurisdiction in the District of Columbia for the breach or threatened breach of this Section in addition to any other remedies in law or equity.
+Exception for Legal Process.  The Receiving Party may disclose Confidential Information to the extent required by law; but the Receiving Party shall, where practicable, notify the Disclosing Party prior to disclosing Confidential Information and shall cooperate with the Disclosing Party if the Disclosing Party elects to legally contest, request confidential treatment, or otherwise avoid such disclosure. Receiving Party shall use reasonable commercial efforts to only disclose that portion of Confidential Information received from or on behalf of Disclosing Party which it is advised by its counsel is legally required, and shall reasonably assist the Disclosing Party, at Disclosing Party’s expense, to obtain a protective order or other reliable assurance that confidential treatment will be accorded the Confidential Information.
 
-a) **MAC address**
+SUPPORT.  This Agreement does not entitle Licensee to any support for the API, unless Licensee makes separate arrangements with TWR and pays all fees associated with such support.  Any such support provided by TWR shall be subject to the terms and conditions of this Agreement as modified by such separate support agreement.  In the event that TWR, in its sole discretion, does provide support, it shall be considered part of the Service for purposes of Article 11 (WARRANTY DISCLAIMER), and TWR may terminate the support at any time without notice to You for any or no reason.  You are solely responsible for providing all support and technical assistance to end users of Your Applications.  You acknowledge and agree that The Wireless Registry has no obligation to provide support or technical assistance directly to Your end users and You shall not represent to any of Your end users that The Wireless Registry is available to provide such support.  
 
-The most common Hardware ID used by our system is the MAC address. A **media access control address** (**MAC address**) is a unique identifier assigned to network interfaces for communications on the physical network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet; and in the case of Wi-Fi and Bluetooth devices, this MAC address is transmitted around the device to identify it to other devices in the immediate area.
-  
-There are many ways of writing a MAC address. For ease of reading, our system converts all valid MAC addresses to what we call _the normalized version_. This is a variant of the standard IEEE 802, with six groups of capitalized hexadecimal digits, separated by colons (:) in transmission order.
+WARRANTY DISCLAIMER.   YOU EXPRESSLY UNDERSTAND AND AGREE THAT:
+YOUR USE OF THE API AND THE SERVICE IS AT YOUR SOLE RISK.  THE API AND THE SERVICE ARE EACH PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS WITHOUT WARRANTY OF ANY KIND.  TO THE MAXIMUM EXTENT PERMITTED BY LAW, TWR EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES AND CONDITIONS OF TITLE, MERCHANTABILITY, SUITABILITY, OPERABILITY, CONDITION, NON-INTERFERENCE, VALUE, ACCURACY OF DATA, WORKMANSHIP, THE ABSENCE OF ANY DEFECTS THEREIN, WHETHER LATENT OR PATENT, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+TWR DOES NOT WARRANT THAT (i) THE API OR THE SERVICE WILL MEET ALL OF YOUR REQUIREMENTS; (ii) THE OPERATION OF THE API OR THE SERVICE WILL BE UNINTERUPTED, TIMELY, SECURE OR ERROR-FREE, OR THAT KNOWN OR DISCOVERED ERRORS WILL BE CORRECTED; OR (iii) THE API OR THE SEVICE WILL PROVIDE RESULTS THAT ARE ACCURATE OR RELIABLE OR (iv) THE API OR THE SERVICE WILL MEET YOUR EXPECTATIONS.  YOU ACKNOWLEDGE THAT TWR’S OBLIGATIONS UNDER THIS AGREEMENT ARE FOR YOUR BENEFIT ONLY.
+You acknowledge that You have not entered into this Agreement in reliance upon any warranty or representation.
 
-    A normalized MAC address:
+LIMITATION OF LIABILITY.  IN NO EVENT WILL TWR BE LIABLE TO YOU OR ANY OF YOUR AFFILIATES OR ANY THIRD PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING, WITHOUT LIMITATION, LOST OR DAMAGED DATA OR DOCUMENTATION, LOST PROFITS, COSTS OF DELAY, ANY FAILURE OF DELIVERY OR BUSINESS INTERRUPTION, IN EACH CASE FOR ANY CLAIM OR DEMAND OF ANY NATURE OR KIND, ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT, THE PERFORMANCE OR BREACH THEREOF OR ANY OTHER SOURCE, EVEN IF TWR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  THE FOREGOING LIMITATION OF LIABILITY SHALL REMAIN IN FULL FORCE AND EFFECT REGARDLESS OF WHETHER LICENSEE’S REMEDIES HEREUNDER ARE DETERMINED TO HAVE FAILED THEIR ESSENTIAL PURPOSE AND REGARDLESS OF WHETHER OTHER PROVISIONS OF THIS AGREEMENT HAVE BEEN BREACHED. 
 
-    01:23:45:67:89:AB
+INDEMNIFICATION.  You, along with Your affiliates, successors and assigns, shall defend, indemnify and hold harmless TWR, its affiliates and its and their respective directors, officers, employees, contractors and agents (each an “Indemnified Party” and collectively, “Indemnified Parties”) from and against any and all claims, losses, damages, liabilities, costs and expenses, including reasonable attorneys’ fees, judgments and settlement amounts (including, without limitation, any costs based on litigation pending or threatened) (collectively, “Losses”), in each case arising out of any third party actual or threatened claims, demands, actions, suits or proceedings (collectively “Claims”), that are asserted against any Indemnified Party arising out of or related to (1) Your use and/or misuse of the API, (2) any claim related to or arising out of Your Application(s), including without limitation (i) the performance, quality or functionality of the Application(s) or their interaction with the API or the TWR Service, (ii) the combination of the Application(s) with any other materials, and (iii) the use, development, design, manufacture, production, advertising, promotion or marketing of the Application(s) or any materials that appear on or with the Application(s), (3) any allegation that the Application(s) infringe (directly or indirectly) any intellectual property rights of any third party, (4) any actual or alleged failure of You to comply with applicable laws, rules or regulations, including, without limitation, with respect to data security or privacy rights or the collection and use of data, (5) Your failure to ensure adequate privacy or security controls with respect to Your Application(s) and servers, or (6) any allegation which, if true, would constitute a breach by You of Your obligations under this Agreement.  TWR agrees to give You (i) prompt written notice of any such claim; (ii) authority to control and direct the defense and/or settlement of such claim; and (iii) such information and assistance as You may reasonably may request, at Your expense, in connection with such defense and/or settlement.  Notwithstanding the foregoing, You shall not settle any third-party claim against TWR unless such settlement completely and forever releases TWR with respect thereto or unless TWR provides its prior written consent to such settlement.  In any action for which You provide defense on behalf of TWR, TWR may participate in such defense at its own expense by counsel of its choice.
+THIRD PARTY BENEFICIARY.  Any Indemnified Party that is not a Party to this Agreement is an intended third-party beneficiary of this Agreement with respect to enforcing its rights to indemnification and related remedies hereunder.
 
-We also accept other formats as well, although they are all converted to the normalized version:
+TERM AND TERMINATION.  This Agreement shall be effective upon the execution thereof and shall continue, unless terminated earlier, for one year, and with automatic consecutive one-year renewal terms   Either Party may terminate this Agreement at any time, for any reason, or for no reason including, but not limited to, if Licensee violates any provision of this Agreement, in which case this Agreement shall terminate immediately and automatically, with or without notice.  Any termination of this Agreement shall also terminate the license(s) granted hereunder as well as the access to any TWR Service(s).  Upon termination of this Agreement for any reason, Licensee shall cease using, destroy all copies of the API and any TWR Confidential Information in its possession, including removal from all computers, hard drives, networks, and other storage media, and shall so certify to TWR that such actions have occurred.  TWR shall have the right to inspect and audit Licensee’s facilities to confirm the foregoing.  
 
-    Other accepted MAC address formats:
+DISPUTE RESOLUTION.  Each Party waives its right to a jury trial in any court action arising between the Parties under this Agreement or otherwise related to this Agreement, whether made by claim, counterclaim, third party claim or otherwise.  If the jury waiver is held to be unenforceable, the Parties agree to binding arbitration for any dispute arising out of this Agreement or any claim arising under any federal, state or local statutes, laws, or regulations.  The arbitration will be conducted in accordance with the arbitration rules promulgated under the CPR Institute for Dispute Resolution’s (“CPR”) Rules for Non-Administered Arbitration of Business Disputes then prevailing.  To the extent that the provisions of this Agreement and the prevailing rules of CPR conflict, the provisions of this Agreement will govern.  The arbitrator(s) will be required to furnish, promptly upon conclusion of the arbitration, a written decision, setting out the reasons for the decision.  The arbitration decision will be final, binding on the Parties, and may be enforced by either Party in any court of competent jurisdiction.  Each Party will bear its own expenses and an equal share of the expenses of the third arbitrator and the fees, if any, of the CPR. 
 
-    01:23:45:67:89:ab
-    01-23-45-67-89-ab
-    0123456789ab
-    0123.4567.89ab
+PUBLICITY.   TWR may include Your name, logo, Trademark and other information about You on TWR’s web site and in TWR’s presentations and marketing collateral to identify You as a user of the Services using the API. 
 
-See http://en.wikipedia.org/wiki/MAC_address for more details about MAC addresses.
+You may publicize your use of the API and the Services, including the use of The Wireless Registry name and logo, in accordance with this agreement, for the purpose of promoting or advertising that You use the API and the Services and in Your Application. 
 
-b) **IMEI**
+GOVERNMENT USE.  If Licensee is a part of any agency, department, or other entity or instrument of the U.S. Government (“Government”), the API is a “commercial item,” “commercial computer software,” and “commercial computer software documentation” developed exclusively at private expense by TWR.  Pursuant to FAR 12.212 or DFARS 227 7202 and their successors, as applicable, use reproduction, release, modification, disclosure and transfer of the API by the Government shall be governed solely by the terms of this Agreement.    
 
-The International Mobile Station Equipment Identity or IMEI is a number, usually unique, to identify most mobile phones (i.e., GSM, UMTS, LTE and iDEN), as well as some satellite phones. It is usually found printed inside the battery compartment of the phone, but can also be displayed on-screen on most phones by entering *#06# on the dialpad, or alongside other system information in the settings menu on smartphone operating systems.
+EXPORT CONTROLS.  Licensee shall comply with all export laws and restrictions and regulations of the Department of Commerce, the United States Department of Treasure Office of Foreign Assets Control (“OFAC”), or other United States or foreign agency authority, and Licensee shall not export or allow the export or re-export of the API in violation of any such restrictions, laws, or regulations.  By downloading the API, Licensee agrees to the foregoing and represents and warrants that Licensee is not located in, under the control of, or a national or resident of any restricted country.  
 
-As of 2004, the format of the IMEI is AA-BBBBBB-CCCCCC-D, where all the digits are decimal. We, however use a slightly different version, replacing the "-" separator with "~".
+Miscellaneous.
+Notices.  Unless otherwise agreed and except as otherwise expressly provided herein, each Party must provide notices or other communications to the other Party as set forth below.  TWR’s notices to You will be posted to www.wirelessregistry.com website or the API documentation repositories.  Your notices to TWR shall be in writing and by: (i) certified mail, hand delivery, or delivery by a reputable overnight courier service to The Wireless Registry, 1445 P Street NW, Unit 703, Washington, D.C. 20005, or (ii) e-mail to api@wirelessregistry.com. The date of notice will be the day the notice is delivered.  In the case of notice by e-mail, the notice is considered received at the local time of the receiving machine, and if not received, then the date the follow-up copy is received.  
+Independent Contractor.  The relationship among and between the parties is that of independent contractors for all purposes and at all times.  Each party has the responsibility for payment of wages, fringe benefits and other compensation to its personnel.  Neither Party nor its personnel have any authority to act on behalf of or to bind the other Party to any obligation.
+No Third Party Beneficiaries. This Agreement is for the benefit of Licensee and TWR and, except as otherwise specifically provided herein, does not provide any third party the right to enforce it or to bring an action for any remedy, claim, liability, reimbursement or cause of action or any other right or privilege.
+Assignment.  Licensee shall not transfer or assign, directly or indirectly, the whole or any part of this Agreement or any of Licensee’s rights or performance obligations without the prior written permission of TWR, which may be withheld in TWR’s sole discretion.  Notwithstanding any other provisions in this Agreement, TWR may, in its sole discretion and without notice, assign this Agreement, in whole or in part, so long as such successor or assignee expressly agrees to comply with the terms of this Agreement.
+Successors and Assigns. This Agreement shall inure to the benefit of and be binding upon the respective successors and permitted assigns, if any, of the Parties; provided, however, that this Section shall not be construed to permit any attempted assignment that would be unauthorized or void pursuant to any other provision of this Agreement.
+Force Majeure. Neither Party will be liable for any delay, failure in performance, loss or damage due to fire, explosion, cable cuts, power blackout, earthquake, flood, strike, embargo, labor disputes, acts of civil or military authority, war, terrorism, acts of God, acts of a public enemy, acts or omissions of carriers or suppliers, acts of regulatory or governmental agencies or other causes beyond such party’s reasonable control.
+Governing Law.  This Agreement will be governed by and interpreted in accordance with the internal substantive laws of the District of Columbia, USA without regard to any conflicts of law principles that would require the application of the laws of any other jurisdiction.  Any actions under this Agreement shall be brought in a court of competent jurisdiction in the District of Columbia and all Parties agree to the personal jurisdiction of such courts.
+Compliance with Laws. Each party will comply with all applicable laws and regulations and with all applicable orders issued by courts or other governmental bodies of competent jurisdiction.
+Waiver; Severability.  The waiver of a breach of any term or condition of this Agreement will not constitute the waiver of any other breach of the same or any other term.  To be enforceable, a waiver must be in writing signed by a duly authorized representative of the waiving Party.  If any provision of this Agreement is held to be unenforceable, the remaining provisions will remain in effect and the Parties will negotiate in good faith a replacement provision that is substantively comparable. 
+Survival.  Provisions intended by their content to survive the expiration or termination of this Agreement will survive.  
+Incorporation of Attachments. The Attachments, including all schedules, attachments, and exhibits, referenced in this Agreement are incorporated in their entirety into and shall operate as if written at length in this Agreement.  
+Remedies.  Except as specifically provided herein, all rights and remedies of the parties, under this Agreement, in law or at equity, are cumulative and may be exercised concurrently or separately.  The exercise of one remedy will not be an election of that remedy to the exclusion of other remedies.
+Marks.  Except as otherwise provided herein, nothing in this Agreement grants either Party the right to use any trademarks, trade names or logos proprietary to TWR or Licensee (“Marks”).  In the event that the Parties agree in writing to allow the use of the other Party’s Marks, any allowed use by a Party of the other Party’s Marks will comply with the other Party’s guidelines for usages of such Marks.   
+Construction.  This Agreement will not be construed against either Party due to authorship.  Except for the indemnification rights and obligations, nothing in this Agreement gives anyone, other than the Parties and any permitted assignees, any rights or remedies under this Agreement. 
+Agreement Language. The language of this Agreement is English. If there is a conflict between this Agreement and any translation, the English version will take precedence.
+Entire Agreement.   This Agreement and any attachments constitute the entire agreement of the Parties as to the subject matter of this Agreement, and supersedes all prior or contemporaneous agreements, proposals, discussions or correspondence, whether written or oral.  This Agreement and any attachments may not be amended or modified except in writing signed by an authorized representative of each Party.  Any terms on either Party’s web site, product schedule or other ordering document, or contained in any “shrinkwrap” or “clickwrap” agreement, will not have force or effect if those provisions conflict with the terms of this Agreement or the attachments.  
+Order of Precedence. The Attachments, if any, to this Agreement are intended to be read in harmony with the terms of this Agreement.  Where an Attachment contains terms that would conflict with the terms of this Agreement, but such terms are expressly limited to the scope of the Attachment itself by language such as “as used in this Attachment” or the like, the terms of the Attachment shall apply as stated.  However, in the event an inconsistency exists between the terms of this Agreement, and the terms of any Attachment, the terms of this Agreement will control.  In the event of a conflict between Attachments, the terms of the Attachment whose general scope is most closely related to the subject matter of the conflict shall prevail.  
+Covenant of Good Faith.  Each Party agrees that, in its respective dealings with the other Party under or in connection with this Agreement, it shall act in good faith.
+Headings.  The headings in this Agreement are inserted merely for the purpose of convenience and shall not affect the meaning or interpretation of this Agreement.
 
-    AA~BBBBBB~CCCCCC~D
-
-See http://en.wikipedia.org/wiki/IMEI for more details about IMEI.
-
-####3. Pins
-
-A pin is an information token that is attached to a Wireless Name or a Hardware ID, or a combination of both Wireless Name and Hardware ID. Pins are the basic unit that is accepted by the API. Pins are text strings from 1-65k characters and while standard pin types expect linkages to the matching type of content for that pin type, custom pins can hold any combination codes and information that a developer would like to use. A wide range of use cases is possible.
-
-Some developers pin codes that represent content on their servers so that any instance of their application can check surrounding detectable signals and retrieve those codes left by other instances of their app on the same signals -  providing app to app communication without GPS or check-ins. 
- 
-Some developers attach lists of wireless identifiers of one type to wireless identifiers of another type - so the detection of a Wi-Fi signal might reveal a list of NFC codes in a room pinned by another device which detected both.
-
-#####Pin Security and Treatment
-
-The API respects the World's first industry accepted proximal signal privacy and opt-out system which is managed by the Future of Privacy Forum in Washington, DC. Mobile detection data analytics companies from around the world are part of this system which protects the privacy of individuals who register their proximal signals. Developers using the Proximal API are **automatically covered by this industry leading privacy best practice**. Please see www.futureofprivacy.org for more detailed information.
- 
-The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API **respects the content the owners proactively manage** and respects their privacy settings throughout.
- 
-The proximal API is un-metered and free. The system is supported via an Wireless Registry ownership model rather than an API usage-based model. Two types of pins are introduced below. Standard pins are secured via the wireless name owner having full control of all standard pins regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they they control the management of.
-  
-#####Pin types
-
-Our system supports two main categories of pins: **standard pins** and **custom pins**.
-
-a) **Standard Pins**
-
-Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are ALWAYS visible on our portal (https://reg.wirelessregistry.com). Therefore they are not well suited for private information.
-
-At this moment the system supports the following standard types:
-
-PIN TYPE | DATA TYPE | DATA CONTENT VALUE(s) | DESCRIPTION
--------- | --------- | -------- | -----------
-**image** | _string_ | max 255 chars | The path to an image file. Usually hosted on imgur.com, although any other server or image hosting service can be used.
-**text** | _text_ | max 65K chars | A generic textual message.
-**url** | _string_ | max 255 chars | A generic URL path.
-**audio** | _string_ | max 255 chars | A URL path to a streaming media resource: audio, video, pages from YouTube, Vimeo, etc.
-
-> **Note:** The **audio** pin type is scheduled to be changed to **streamingmedia**
-
-Further standard types are also scheduled to be added in the near future. Here is a preview for a few of them:
-
-- facebook
-- twitter
-- pinterest
-- linkedin
-- email
-- phone
-
-...and many more.
-
-Standard pins must be created on a single Wireless Name or Wireless Name ~ Hardware ID combination at a time. An example of a standard pin would be pining a picture to the Wireless Name of a restaurant. Any app on any device can check the open API for content associated with the Wireless Name of the restaurant and will get the pin immediately and could render the picture. 
-
-It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins associated to the Wireless Name checked, but only standard pins.
-
-b) **Custom Pins**
-
-In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
-
-Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
- 
-Custom pins can be created on an array of 1 to 10 Wireless Name, Wireless Name ~ Hardware ID, or Hardware ID alone combinations at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct custom pin type known only to that app.
-
-Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requester must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
-
-**Pin Use Combinations**
- 
-When custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as MAC addresses and iPhone-based ibeacons, a wide range of new contextual awareness and device-to-device sharing of pin data is possible.
-
-Creative uses of pins allow 2 mobile app installs to deduce the are immediately proximal via detecting the same 2 or 3 ambient signals - quickly and without the need for GPS check-ins. Other applications pin custom triggers such as game tokens to ambient signals that persist for days or months that other running apps detect when checking ambient signals. Still others pin usernames or statistics so other devices can see how many users are or have been in a location over a defined period.
-
-The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywhere a data connection is available - completely GPS, battery drain, and check-in free. The API will continue to expand the list of supported Wireless Name and Hardware ID formats, adding Zigbee IDs in 2014 and LTE Direct Expressions in 2015.
-     
-  
----
-
-##Entry Points
-
-Each API method has two entry points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores. The production servers will be available April 12th, 2014.
-  
-###1. POST v2/wns/pins
-
-SERVER TYPE | URL
------------ | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins
-
-
-###2. GET v2/wns/pins
-
-SERVER TYPE | URL
------------ | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins
-
-
-###3. GET v2/wns/pins?count
-
-SERVER TYPE | URL
------------ | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins?count
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins?count
-
-
----
-
-
-##1. POST v2/wns/pins
-
-###A. Parameters
-
-PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
---------- | ----------------- | ------- | -------- | -----------
-**devices** | required | _array_ | one or more valid **wirelessName** and **hardwareID** pairs | The set of identifiers for the devices where the content must be pinned
-**wirelessName** | required | _string_ | valid Wireless Name | Wireless Name where the pin should be added
-**hardwareID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added
-**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
-**type** | required | _string_ | valid standard or custom pin type | Type of the pin being added
-**data** | required | _text_ | Max 65K chars | This is the content added, depending on the type used
-**label** | optional | _string_ | Max 255 chars open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content
-
-> **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
-
-
-###B. RESPONSE
-  
-**Fatal Error:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _string_ | short description of the fatal error
-
-**Success:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**success** | _array_ of _string_| each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully
-
-**Mixed results:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error
-**success** | _array_ of _string_ | each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully
-
-
-###C. EXAMPLES
-
-**Generic valid data structure**
-
-    [devices] => Array
-        (
-            [0] => Array
-                (
-                    [wirelessName] => 'wn 1'
-                    [hardwareID] => '6E:AA:40:F4:8F:DA'
-                )
-
-            [1] => Array
-                (
-                    [wirelessName] => 'wn 2'
-                    [hardwareID] => 'D8:16:13:AB:28:AD'
-                )
-
-        )
-    [listenerID] => 'B1:C2:FC:D9:CD:10'
-    [type] => 'image'
-    [data] => 'https://reg.wirelessregistry.com/assets/img/default-pin.png'
-
----
-
-##2. GET v2/wns/pins
-
-###A. Parameters
-
-PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
---------- | ----------------- | ------- | -------- | -----------
-**wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
-**hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
-**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
-**types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
-**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The beginning of the time interval that will limit the request
-**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The end of the time interval that will limit the request
-
-
-###B. RESPONSE
-
-**Fatal Error:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _string_ | short description of the fatal error
-
-**Success:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**
-**meta** | JSON _array_ | Contains metainformation about the result
-**pins** | JSON _array_ | Contains the pins retrieved by the request
-
-
-    {
-        "meta": {
-            "count": 5
-        },
-        "pins": [
-            {
-                "wirelessName": "wn 1",
-                "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
-                "label": "label test",
-                "type": "image",
-                "addingDate": '02/15/2014'
-            },
-            {
-                "wirelessName": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00000~00000",
-                "data": "data test1",
-                "label": "",
-                "type": "text",
-                "addingDate": '02/15/2014'
-            },
-            {
-                "wirelessName": "wn 1",
-                "data": "data test",
-                "label": "label test",
-                "type": "custom-type-label-of-my-own-design",
-                "addingDate": '02/17/2014'
-            },
-            {
-                "hardwareID": "6E:AA:40:F4:8F:DA",
-                "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
-                "label": "",
-                "type": "image",
-                "addingDate": '02/15/2014'
-            },
-            {
-                "hardwareID": "6E:AA:40:F4:8F:DA",
-                "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
-                "label": "",
-                "type": "image",
-                "addingDate": '02/25/2014'
-            }
-        ]
-    }
-
-**Mixed results:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which **wirelessName** or **hardwareID** caused the error, as well as the nature of that error
-**success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters
-
-
-###C. EXAMPLES
-
-**Generic valid data structure**
-
-    [wirelessNames] => Array
-        (
-            [0] => 'wn 1'
-            [1] => 'wn 2'
-        )
-    [hardwareIDs] => Array
-        (
-            [0] => '6E:AA:40:F4:8F:DA'
-            [1] => 'D8:16:13:AB:28:AD'
-        )
-    [types] => Array
-        (
-            [0] => 'image'
-            [1] => 'custom-type-label-of-my-own-design'
-        )
-    [listenerID] => 'B1:C2:FC:D9:CD:10'
-    [startDate] => '01/01/2014'
-    [endDate] => '01/31/2014'
-
-
-
----
-
-##3. GET v2/wns/pins?count
-
-###A. Parameters
-
-PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
---------- | ----------------- | ------- | -------- | -----------
-**wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
-**hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
-**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
-**types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
-**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The beginning of the time interval that will limit the request
-**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The end of the time interval that will limit the request
-
-
-###B. RESPONSE
-
-**Fatal Error:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _string_ | short description of the fatal error
-
-
-**Success:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**
-**meta** | JSON _array_ | Contains metainformation about the result
-**pins** | JSON _array_ | Contains the pins retrieved by the request
-
-
-    {
-        "meta": {
-            "count": 6
-        },
-        "pins": [
-            {
-                "wirelessName": "test",
-                "count": 0
-            },
-            {
-                "wirelessName": "myotherrideisatitan",
-                "count": 0
-            },
-            {
-                "hardwareID": "6E:AA:40:F4:8F:DA",
-                "type": "image",
-                "count": 2
-            },
-            {
-                "hardwareID": "6E:AA:40:F4:8F:DA",
-                "type": "text",
-                "count": 1
-            },
-            {
-                "hardwareID": "D8:16:1A:B2:8C:AD",
-                "type": "image",
-                "count": 2
-            },
-            {
-                "hardwareID": "D8:16:1A:B2:8C:AD",
-                "type": "text",
-                "count": 1
-            }
-        ]
-    }
-
-**Mixed results:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _array_ of _string_ | each element has an error message, specifying which **wirelessName** or **hardwareID** caused the error, as well as the nature of that error
-**success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters
-
-
-###C. EXAMPLES
-
-**Generic valid data structure**
-
-    [wirelessNames] => Array
-        (
-            [0] => 'wn 1'
-            [1] => 'wn 2'
-        )
-    [hardwareIDs] => Array
-        (
-            [0] => '6E:AA:40:F4:8F:DA'
-            [1] => 'D8:16:13:AB:28:AD'
-        )
-    [types] => Array
-        (
-            [0] => 'image'
-            [1] => 'custom-type-label-of-my-own-design'
-        )
-    [listenerID] => 'B1:C2:FC:D9:CD:10'
-    [startDate] => '01/01/2014'
-    [endDate] => '01/31/2014'
