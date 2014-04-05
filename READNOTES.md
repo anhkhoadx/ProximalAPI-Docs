@@ -6,7 +6,7 @@ Emailing to a wireless name is possible using the format WirelessName@WirelessRe
 
 ###Wireless Name Public URL for public Pins
 
-All wireless strings may have public content associated with them and this content can be seen at WirelessRegistry.com/Name or WirelessRegistry.com/HardwareID. This page shows...
+All wireless strings may have public content associated with them and this content can be seen at www.WirelessRegistry.com/Name or www.WirelessRegistry.com/HardwareID. This page shows...
 
 ###Email to a Wireless Name
 
