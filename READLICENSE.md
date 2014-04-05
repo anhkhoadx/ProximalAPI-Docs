@@ -83,3 +83,5 @@ Order of Precedence. The Attachments, if any, to this Agreement are intended to 
 Covenant of Good Faith.  Each Party agrees that, in its respective dealings with the other Party under or in connection with this Agreement, it shall act in good faith.
 Headings.  The headings in this Agreement are inserted merely for the purpose of convenience and shall not affect the meaning or interpretation of this Agreement.
 
+The Wireless Registry Inc, 2014
+ 
