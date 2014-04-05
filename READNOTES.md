@@ -4,7 +4,7 @@
 
 Emailing to a wireless name is possible...
 
-###Wireless Name Public URL at WirelessRegistry.com/Name or HardareID
+###Wireless Name Public URL for public Pins
 
 All wireless strings may have public content associated with them and this content can be seen at WirelessRegistry.com/Name or HardwareID. This page shows...
 
