@@ -272,38 +272,40 @@ PARAMETER | TYPE(s)  | DESCRIPTION
                 "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
                 "label": "label test",
                 "type": "image",
-                "addingDate": '02/15/2014'
+                "addingDate": '02/15/2014 00:00:00'
             },
             {
                 "wirelessName": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00000~00000",
                 "data": "data test1",
                 "label": "",
                 "type": "text",
-                "addingDate": '02/15/2014'
+                "addingDate": '02/15/2014 00:00:00'
             },
             {
                 "wirelessName": "wn 1",
                 "data": "data test",
                 "label": "label test",
                 "type": "custom-type-label-of-my-own-design",
-                "addingDate": '02/17/2014'
+                "addingDate": '02/17/2014 00:00:00'
             },
             {
                 "hardwareID": "6E:AA:40:F4:8F:DA",
                 "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
                 "label": "",
                 "type": "image",
-                "addingDate": '02/15/2014'
+                "addingDate": '02/15/2014 00:00:00'
             },
             {
                 "hardwareID": "6E:AA:40:F4:8F:DA",
                 "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
                 "label": "",
                 "type": "image",
-                "addingDate": '02/25/2014'
+                "addingDate": '02/25/2014 00:00:00'
             }
         ]
     }
+
+> **Note:** 'addingDate' field is formatted based on the following pattern: MM/DD/YYYY hh:mm:ss (month/day/year hours:minutes:seconds)
 
 **Mixed results:**
 
