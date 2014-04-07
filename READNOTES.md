@@ -33,9 +33,9 @@ Public pins and all account information is stored on highly secure redundant clo
 Standard pins are publicly view-able unless deleted or blocked by the wireless name owner. When an application requests pins associated with a wireless name or hardware ID it encounters, it can request all standard (public) pins, or in the interest of not being overwhelmed, it may request only a certain type, such as audio or a social media profile. Since a large number of wireless names and hardware IDs can be checked at once (say 500 wireless names detected in one location), using pin types will refine the search to what the app developer is interested in. Note that custom types are refined by their very nature of requiring the single, specific custom type - the pin type that the developer is interested in checking for on a group of wireless names or IDs detected by the wireless device running the application.
  
 
-
-
-
+###Date Parameters
+ 
+Careful use of the startDate and endDate parameters on the get function will ensure you get recent pins or older pins, or a correct count of pins for the day and time range you are interested in. These parameters allow you to ensure the data is not stale based on whatever is stale for your application. CreatedAt date and time can be used to indicate immediate between two devices via the simultaneous detection of the same unique WirelessName~HarewareID combination.
 
 
 
