@@ -16,4 +16,8 @@ Note that the wireless signals in question are independent of the technology or 
 
 Throughout the documentation and in recommended use-cases you will note the use of the tilde "~". This character will be used as an indicator of a wireless name (~MyWirelessName) as well as a separator between wireless names and a related hardware ID (MyWirelessName~AB:12:AB:12:AB:12).
  
+###Pin Ownership, data ownership
+
+The Wireless Registry considers all data in the system to be owned and controlled by the registered wirless string owners. This means registrants of a wireless name control all Public pins at all times. HardwareID registrants similarly control all pins, both Standard pins and Custom pins.
+ 
      
