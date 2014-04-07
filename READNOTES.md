@@ -22,7 +22,7 @@ The Wireless Registry considers all data in the system to be owned and controlle
 
 ###Data Security for The Developer
  
-Costom pins use complex pin types which can be up to 256 character (a hash for example) and this serves as the security token for the developer. No one can query your pins back without explicitily asking for your pin type. The longer and more complex your pin type, the more secure it is. You may also choose to share or make obvious pin types. The data in the pin can be strictly codes pointing to data in your secure system or data that only your app will understand. This data can be up to 65k characters. The system stores only these short linkages and media content and any other type of content should be stored on your secure servers or any other service you choose to use. The API stores and retrieves linkages between wireless identifiers and content you store elseware.
+Custom pins use complex pin types which can be up to 256 character (a hash for example) and this serves as the security token for the developer. No one can query your pins back without explicitily asking for your pin type. The longer and more complex your pin type, the more secure it is. You may also choose to share or make obvious pin types. The data in the pin can be strictly codes pointing to data in your secure system or data that only your app will understand. This data can be up to 65k characters. The system stores only these short linkages and media content and any other type of content should be stored on your secure servers or any other service you choose to use. The API stores and retrieves linkages between wireless identifiers and content you store elseware.
  
 ###Data Security for Wireless Name and Hardware ID Owners
  
