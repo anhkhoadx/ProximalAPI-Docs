@@ -22,7 +22,7 @@ The Wireless Registry considers all data in the system to be owned and controlle
 
 ###Data Security for the developer
  
-Costom pins use complex pin types which can be up to 256 character hashes, and the data in the pin can be strictly 
+Costom pins use complex pin types which can be up to 256 character hashes and this serves as the security token for the developer. No one can query your pins back without explicitily asking for your pin type. The longer and more complex your pin type, the more secure it is. You may also choose to share or make obvious pin types. The data in the pin can be strictly 
 
 
 
