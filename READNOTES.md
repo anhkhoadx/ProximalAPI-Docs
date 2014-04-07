@@ -1,13 +1,6 @@
 ##Proximal API v2.0 - Additional Notes
 
-###Email to a Wireless Name
 
-Emailing to a wireless name is possible using the format WirelessName@WirelessRegistry.com or HardwareID@WirelessRegistry.com. The email will enter the system and be forwarded immediately to the Wireless Name owner who can then respond directly to the original sender. Emails can also be sent to a Hardware ID in the same manner, for example AB-12-AB-12-AB-12@wirelessregistry.com or AB12AB12AB12@wirelessregistry.com and flow through to the registered owner. Innovative use cases can be built where a router of any kind can contact a device or the owner of the device directly via the wireless ID string without a direct connection to it.
-  
-###Wireless Name Public URL for public Pins
-
-All wireless strings may have public content associated with them and this content can be seen at www.WirelessRegistry.com/WirelessName or www.WirelessRegistry.com/HardwareID. This page shows all public content, such as standard pins, that is associated to the wireless string and allowed by the registered owner. www.WirelessRegistry.com/WirelessName~HardwareID will take the user directly to the content associated to that particular wireless name and hardwareID combination.
- 
 ###Wireless Technology and Spectrum
 
 Note that the wireless signals in question are independent of the technology or spectrum they are transmitted on. A wireless name can be transmitted on Wi-Fi, Bluetooth, BLE, LTE-Direct or any other technology on any spectrum. Distance and signal strength are also not included as these are managed on device by your software. You may choose to check a wireless signal for pins or to pin to a wireless signal based on the type of signal or based on a signal strength. This is all done on device under specific application control. You may pin different custom pin types for different types of signals - for Bluetooth, or Wi-Fi, or LTE-Direct for example. You may include the signal strength or any other data you wish in the data payload of the pin. This is all up to the developer and the combinations allow for creative implementations.
@@ -44,7 +37,13 @@ Presence in general means the devices detected are there by the fact that they a
 
 Location (lat-long) does not mean anything else is there with your device - it requires a check-in or some other geo-fence style inference that things are there. This inference method suffers greatly by the variation in the quality of the Lat-Long, by movement, by the check-in validity. A checkin doesn't actually mean the person or thing is present at all and can be easily spoofed. It is harder (but definitely possible) to transmit a signal live somewhere erroneously so another can detect it. As wireless signals around us balloon into the millions the situation becomes even more rich for complex presence and authentication use cases. For example, meaning can be associated with a complex pattern of signals, not just a single signal. The Proximal API allows those use cases to be developed by allowing developers to query and contribute to the meaning of those signals in real time.
  
+###Email to a Wireless Name
 
+Emailing to a wireless name is possible using the format WirelessName@WirelessRegistry.com or HardwareID@WirelessRegistry.com. The email will enter the system and be forwarded immediately to the Wireless Name owner who can then respond directly to the original sender. Emails can also be sent to a Hardware ID in the same manner, for example AB-12-AB-12-AB-12@wirelessregistry.com or AB12AB12AB12@wirelessregistry.com and flow through to the registered owner. Innovative use cases can be built where a router of any kind can contact a device or the owner of the device directly via the wireless ID string without a direct connection to it.
+  
+###Wireless Name Public URL for public Pins
+
+All wireless strings may have public content associated with them and this content can be seen at www.WirelessRegistry.com/WirelessName or www.WirelessRegistry.com/HardwareID. This page shows all public content, such as standard pins, that is associated to the wireless string and allowed by the registered owner. www.WirelessRegistry.com/WirelessName~HardwareID will take the user directly to the content associated to that particular wireless name and hardwareID combination.
 
 
 
