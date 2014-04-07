@@ -34,10 +34,15 @@ Public pins and all account information is stored on highly secure redundant clo
 
 Standard pins are publicly view-able unless deleted or blocked by the wireless name owner. When an application requests pins associated with a wireless name or hardware ID it encounters, it can request all standard (public) pins, or in the interest of not being overwhelmed, it may request only a certain type, such as audio or a social media profile. Since a large number of wireless names and hardware IDs can be checked at once (say 500 wireless names detected in one location), using pin types will refine the search to what the app developer is interested in. Note that custom types are refined by their very nature of requiring the single, specific custom type - the pin type that the developer is interested in checking for on a group of wireless names or IDs detected by the wireless device running the application.
  
-
 ###Date/Time Parameters
  
 Careful use of the startDate and endDate parameters on the get function will ensure you get recent pins or older pins, or a correct count of pins for the day and time range you are interested in. These parameters allow you to ensure the data is not stale based on whatever stale means for your application. Innovative use of CreatedAt date and time can, for example, indicate immediate proximity between two devices via the simultaneous detection of the same unique WirelessName~HarewareID combinations without GPS or Lat-Long. Many other functions can be built on top of two or more devices comparing the signals around them via rapid post and get pin comparisons.
+
+###Presence vs. Location
+
+Presence in general means the devices detected are there by the fact that they are being detected. 
+
+Location (lat-long) does not mean anything else is there with your device - it requires a check-in or some other geo-fence style inference that things are there. This inference method suffers greatly by the variation in the quality of the Lat-Long, by movement, by the check-in validity. A checkin doesn't actually mean the person or thing is present at all and can be easily spoofed. It is harder (but definitely possible) to transmit a signal live somewhere erroneously so another can detect it. As wireless signals around us balloon into the millions the situation becomes even more rich for complex presence and authentication use cases. For example, meaning can be associated with a complex pattern of signals, not just a single signal. The Proximal API allows those use cases to be developed by allowing developers to query and contribute to the meaning of those signals in real time.
  
 
 
