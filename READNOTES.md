@@ -28,6 +28,17 @@ Custom pins use complex pin types which can be up to 256 characters (a hash for 
  
 Public pins and all account information is stored on highly secure redundant cloud services. The system is SSL throughout and all data is stored encrypted. The wireless name or hardware ID owner has the ability to add or delete all public pins associated to wireless names they own at any time.
  
+###Use of Standard Pin Types
+
+Standard pins are publicly viewable unless deleted or blocked by the wireless name owner. Whan an application requests pins associated with a wireless name or hardware ID encountered it can request all standard (public) pins, or in the interest of not being overwhelmed, it may request only a certain type, such as Audio or a social media profile. Since a large number of wirless strings can be checked at once (say 500 wireless names detected in one location), using pin types will refine the search to what the app developer is interested in. Note that custom types are refined by their very nature of requiring the single specific custom type the developer is interested in checking for the group of wireless names or IDs detected.
+ 
+
+
+
+
+
+
+
 
 
 
