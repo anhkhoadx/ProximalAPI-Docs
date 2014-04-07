@@ -10,15 +10,19 @@ All wireless strings may have public content associated with them and this conte
  
 ###Wireless Technology and Spectrum
 
-Note that the wireless signals in question are independent of the technology or spectrum then are transmitted on. A wireless name can be transmitted on Wi-Fi, Bluetooth, BLE, LTE-Direct or any other technology on any spectrum.
-     
+Note that the wireless signals in question are independent of the technology or spectrum then are transmitted on. A wireless name can be transmitted on Wi-Fi, Bluetooth, BLE, LTE-Direct or any other technology on any spectrum. Distance and signal strength are also not included as these are managed on device by your software. You may choose to check a wireless signal for pins or to pin to a wireless signal based on the type of signal or based on a signal strength. This is all done on device under your control. You may pin different custom pin types for different types of signals - for Bluetooth, or Wi-Fi, or LTE-Direct for example. You may inlude the signal strength or any other data you wish in the data payload of the pin. This is all up to the developer and the combinations allow for creative implementations.
+       
 ###Tilde
 
 Throughout the documentation and in recommended use-cases you will note the use of the tilde "~". This character will be used as an indicator of a wireless name (~MyWirelessName) as well as a separator between wireless names and a related hardware ID (MyWirelessName~AB:12:AB:12:AB:12).
  
 ###Pin Ownership, overall data ownership
 
-The Wireless Registry considers all data in the system to be owned and controlled by the registered wirless string owners. This means registrants of a wireless name control all Public pins at all times. HardwareID registrants similarly control all pins, both Standard pins and Custom pins. Developers can freely add pins to any wireless signal at no cost and aslo query the system without restriction or cost - and the Registry and API infrasture of The Wireless Registry will automatically ensure the pins respect the privacy settings and control requests of all Wireless Name and Hardware ID owners. The infrastructure will adjust pins as required to meet the requests and privacy of the owners while maximizing the usefullness and availability for all wireless device software developers. Pins cannot be deleted by anyone other than the wireless name or Hardware ID owner, and pins can never be modified - only deleted.
+The Wireless Registry considers all data in the system to be owned and controlled by the registered wirless string owners. This means registrants of a wireless name control all Public pins at all times. HardwareID registrants similarly control all pins, both Standard pins and Custom pins. Developers can freely add pins to any wireless signal at no cost and also query the system without restriction or cost - and the Registry and API infrasture of The Wireless Registry will automatically ensure the pins respect the privacy settings and control requests of all Wireless Name and Hardware ID owners. The infrastructure will adjust pins as required to meet the requests and privacy needs of the owners while maximizing the usefullness and availability for all wireless device software developers. Pins cannot be deleted by anyone other than the wireless name or Hardware ID owner, and pins can never be modified once created. 
+
+###Data Security for the developer
+ 
+Costom pins use complex pin types which can be up to 256 character hashes, and the data in the pin can be strictly 
 
 
 
