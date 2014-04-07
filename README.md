@@ -244,6 +244,8 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request
 **endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request
 
+> **Note:** The default time value for **startDate** is 00:00:00. The default time value for **endDate** is 23:59:59
+
 
 ###B. RESPONSE
 
@@ -354,6 +356,8 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
 **startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request
 **endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request
+
+> **Note:** The default time value for **startDate** is 00:00:00. The default time value for **endDate** is 23:59:59
 
 
 ###B. RESPONSE
