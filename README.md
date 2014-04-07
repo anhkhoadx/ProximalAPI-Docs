@@ -241,8 +241,8 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
 **types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
-**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The beginning of the time interval that will limit the request
-**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The end of the time interval that will limit the request
+**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request
+**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request
 
 
 ###B. RESPONSE
@@ -335,8 +335,8 @@ PARAMETER | TYPE(s)  | DESCRIPTION
             [1] => 'custom-type-label-of-my-own-design'
         )
     [listenerID] => 'B1:C2:FC:D9:CD:10'
-    [startDate] => '01/01/2014'
-    [endDate] => '01/31/2014'
+    [startDate] => '01/01/2014 00:00:00'
+    [endDate] => '01/31/2014 00:00:00'
 
 
 
@@ -352,8 +352,8 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
 **types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
-**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The beginning of the time interval that will limit the request
-**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY" | The end of the time interval that will limit the request
+**startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request
+**endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request
 
 
 ###B. RESPONSE
@@ -438,5 +438,5 @@ PARAMETER | TYPE(s)  | DESCRIPTION
             [1] => 'custom-type-label-of-my-own-design'
         )
     [listenerID] => 'B1:C2:FC:D9:CD:10'
-    [startDate] => '01/01/2014'
-    [endDate] => '01/31/2014'
+    [startDate] => '01/01/2014 00:00:00'
+    [endDate] => '01/31/2014 00:00:00'
