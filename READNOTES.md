@@ -30,7 +30,7 @@ Public pins and all account information is stored on highly secure redundant clo
  
 ###Use of Standard Pin Types
 
-Standard pins are publicly viewable unless deleted or blocked by the wireless name owner. Whan an application requests pins associated with a wireless name or hardware ID encountered it can request all standard (public) pins, or in the interest of not being overwhelmed, it may request only a certain type, such as Audio or a social media profile. Since a large number of wirless strings can be checked at once (say 500 wireless names detected in one location), using pin types will refine the search to what the app developer is interested in. Note that custom types are refined by their very nature of requiring the single specific custom type the developer is interested in checking for the group of wireless names or IDs detected.
+Standard pins are publicly view-able unless deleted or blocked by the wireless name owner. When an application requests pins associated with a wireless name or hardware ID it encounters, it can request all standard (public) pins, or in the interest of not being overwhelmed, it may request only a certain type, such as audio or a social media profile. Since a large number of wireless names and hardware IDs can be checked at once (say 500 wireless names detected in one location), using pin types will refine the search to what the app developer is interested in. Note that custom types are refined by their very nature of requiring the single, specific custom type - the pin type that the developer is interested in checking for on a group of wireless names or IDs detected by the wireless device running the application.
  
 
 
