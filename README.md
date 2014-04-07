@@ -117,7 +117,7 @@ It is important to note that the API can also be queried with no pin type parame
 
 b) **Custom Pins**
 
-In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types.
+In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types. The content field is max 65K chars. 
 
 Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
  
