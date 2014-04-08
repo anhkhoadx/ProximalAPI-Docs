@@ -375,7 +375,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
 **result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**
 **meta** | JSON _array_ | Contains metainformation about the result
-**pins** | JSON _array_ | Contains the pins retrieved by the request
+**pins** | JSON _array_ | Contains the count of pins retrieved by the request, for each valid **wirelessName** or **hardwareID**. Each pin type is counted in a separate entry.
 
 
     {
