@@ -27,7 +27,7 @@ The pins are not protected in the current sense of how we think about online con
  
 Public pins and all account information is stored on highly secure redundant cloud services. The system is SSL throughout and all data is stored encrypted. The wireless name or hardware ID owner has the ability to add or delete all public pins associated to wireless names they own at any time.
 
-You have to register in order to take action and control your wireless identity otherwise someone else could control yours. You can register any mobile hardware ID (MAC, IMEI, BlueTooth MAC) for free with a mobile registration app from The Wireless Registry. You can also register a wireless name free for a year or register one of the free social media names we will launch this month. For regular names we charge at some point as this is the ownership model and some names are more valuable than others.
+You have to register in order to take action and control your wireless identity otherwise someone else could control yours. You can register any mobile hardware ID (MAC, IMEI, BlueTooth MAC) for free with a mobile registration app from The Wireless Registry. You can also register a wireless name free for a year or register one of the unlimited free social media names we will launch this month. For regular names we charge at some point as this is the ownership model and some names are more valuable than others.
   
 ###Use of Standard Pin Types
 
