@@ -145,7 +145,7 @@ Each API method has two entry points, depending on the purpose of use. One, on s
 SERVER TYPE | URL
 ----------- | ---------------
 **staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins
+**production** | https://api.wirelessregistry.com/twrcore/api/v2/wns/pins
 
 
 ###2. GET v2/wns/pins
@@ -153,7 +153,7 @@ SERVER TYPE | URL
 SERVER TYPE | URL
 ----------- | ---------------
 **staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins
+**production** | https://api.wirelessregistry.com/twrcore/api/v2/wns/pins
 
 
 ###3. GET v2/wns/pins?count
@@ -161,7 +161,7 @@ SERVER TYPE | URL
 SERVER TYPE | URL
 ----------- | ---------------
 **staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins?count
-**production** | https://api.wirelessregistry.com/api/v2/wns/pins?count
+**production** | https://api.wirelessregistry.com/twrcore/api/v2/wns/pins?count
 
 
 ---
