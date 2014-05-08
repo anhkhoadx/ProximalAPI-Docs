@@ -87,7 +87,7 @@ Our system supports two main categories of pins: **standard pins** and **custom 
 
 a) **Standard Pins**
 
-Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are ALWAYS visible on our portal (https://reg.wirelessregistry.com). Therefore they are not well suited for private information.
+Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are ALWAYS visible on our portal (https://wirelessregistry.com). Therefore they are not well suited for private information.
 
 At this moment the system supports the following standard types:
 
@@ -145,7 +145,7 @@ Each API method has two entry points, depending on the purpose of use. One, on s
 SERVER TYPE | URL
 ----------- | ---------------
 **staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/twrcore/api/v2/wns/pins
+**production** | https://api.wirelessregistry.com/v2/wns/pins
 
 
 ###2. GET v2/wns/pins
@@ -153,7 +153,7 @@ SERVER TYPE | URL
 SERVER TYPE | URL
 ----------- | ---------------
 **staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/twrcore/api/v2/wns/pins
+**production** | https://api.wirelessregistry.com/v2/wns/pins
 
 
 ###3. GET v2/wns/pins?count
@@ -161,7 +161,7 @@ SERVER TYPE | URL
 SERVER TYPE | URL
 ----------- | ---------------
 **staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins?count
-**production** | https://api.wirelessregistry.com/twrcore/api/v2/wns/pins?count
+**production** | https://api.wirelessregistry.com/v2/wns/pins?count
 
 
 ---
@@ -227,7 +227,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
         )
     [listenerID] => 'B1:C2:FC:D9:CD:10'
     [type] => 'image'
-    [data] => 'https://reg.wirelessregistry.com/assets/img/default-pin.png'
+    [data] => 'https://wirelessregistry.com/assets/img/default-pin.png'
 
 ---
 
@@ -271,7 +271,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
         "pins": [
             {
                 "wirelessName": "wn 1",
-                "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
+                "data": "https://wirelessregistry.com/assets/img/default-pin.png",
                 "label": "label test",
                 "type": "image",
                 "addingDate": '02/15/2014 00:00:00'
@@ -292,14 +292,14 @@ PARAMETER | TYPE(s)  | DESCRIPTION
             },
             {
                 "hardwareID": "6E:AA:40:F4:8F:DA",
-                "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
+                "data": "https://wirelessregistry.com/assets/img/default-pin.png",
                 "label": "",
                 "type": "image",
                 "addingDate": '02/15/2014 00:00:00'
             },
             {
                 "hardwareID": "6E:AA:40:F4:8F:DA",
-                "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
+                "data": "https://wirelessregistry.com/assets/img/default-pin.png",
                 "label": "",
                 "type": "image",
                 "addingDate": '02/25/2014 00:00:00'
