@@ -140,11 +140,11 @@ The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywh
 
 Each API method has two entry points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores. The production servers will be available April 12th, 2014. The methods include POST, GET, and GET-COUNT; pins cannot be edited and pins are only deleted via the action of the wireless name or hardware ID owner, or system cleanup processes if required; otherwise, pins do not expire.
 
-*Testing*: Summary...
+*Testing*: Summary... 60min purge
 
 *Production*: Summary...
   
-###1. POST v2/pins
+###1. POST v1/pins
 
 SERVER TYPE | URL
 ----------- | ---------------
@@ -152,7 +152,7 @@ SERVER TYPE | URL
 **production** | https://api.wirelessregistry.com/v1/pins
 
 
-###2. GET v2/pins
+###2. GET v1/pins
 
 SERVER TYPE | URL
 ----------- | ---------------
@@ -160,7 +160,7 @@ SERVER TYPE | URL
 **production** | https://api.wirelessregistry.com/v1/pins
 
 
-###3. GET v2/pins/count
+###3. GET v1/pins/count
 
 SERVER TYPE | URL
 ----------- | ---------------
