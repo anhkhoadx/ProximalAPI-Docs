@@ -152,16 +152,16 @@ SERVER TYPE | URL
 
 SERVER TYPE | URL
 ----------- | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins
-**production** | https://api.wirelessregistry.com/v2/wns/pins
+**testing** | http://testapi.wirelessregistry.com/v2
+**production** | https://api.wirelessregistry.com/v2
 
 
 ###3. GET v2/wns/pins?count
 
 SERVER TYPE | URL
 ----------- | ---------------
-**staging** | http://stagingapi.wirelessregistry.com/api/v2/wns/pins?count
-**production** | https://api.wirelessregistry.com/v2/wns/pins?count
+**testing** | http://testapi.wirelessregistry.com/v2/pins/count
+**production** | https://api.wirelessregistry.com/v2/pins/count
 
 
 ---
