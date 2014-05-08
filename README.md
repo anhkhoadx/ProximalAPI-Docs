@@ -1,4 +1,4 @@
-#Proximal API v2.0
+#Proximal API v1.0
 
 ##Introduction
 
@@ -171,7 +171,7 @@ SERVER TYPE | URL
 ---
 
 
-##1. POST v2/wns/pins
+##1. POST v1/wns/pins
 
 ###A. Parameters
 
@@ -235,7 +235,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 ---
 
-##2. GET v2/wns/pins
+##2. GET v1/wns/pins
 
 ###A. Parameters
 
@@ -348,7 +348,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 ---
 
-##3. GET v2/wns/pins?count
+##3. GET v1/pins?count
 
 ###A. Parameters
 
