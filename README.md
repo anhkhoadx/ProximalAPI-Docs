@@ -136,12 +136,12 @@ The API works in-flight with GoGo In-Flight, on moving buses and cars, and anywh
 
 ##Entry Points
 
-Each API method has two entry points, depending on the purpose of use. One, on staging servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores. The production servers will be available April 12th, 2014. The methods include POST, GET, and GET-COUNT; pins cannot be edited and pins are only deleted via the action of the wireless name or hardware ID owner, or system cleanup processes if required; otherwise, pins do not expire.
+Each API method has two entry points, depending on the purpose of use. One, on testing servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores. The methods include POST, GET, and COUNT; pins cannot be edited and pins are only deleted via the action of the wireless name or hardware ID owner. Pins do not expire.
 
-*Testing*: Summary... 60min purge
+*Testing Server*: Testing servers allow developers to use the API in any way without the pins showing up in the live system. All pins are purged after 60 minutes.
 
-*Production*: Summary...
-  
+*Production Server*: The live system where public pins show up on public pinboards, wireless name owner accounts, and other live systems. Custom pins are still as private to the developer as the developers careful usage of the custom pin type.
+   
 ###1. POST v1/pins
 
 SERVER TYPE | URL
