@@ -148,24 +148,24 @@ Each API method has two entry points, depending on the purpose of use. One, on s
 
 SERVER TYPE | URL
 ----------- | ---------------
-**testing** | http://testapi.wirelessregistry.com/v2/pins
-**production** | https://api.wirelessregistry.com/v2/pins
+**testing** | http://testapi.wirelessregistry.com/v1/pins
+**production** | https://api.wirelessregistry.com/v1/pins
 
 
 ###2. GET v2/pins
 
 SERVER TYPE | URL
 ----------- | ---------------
-**testing** | http://testapi.wirelessregistry.com/v2/pins
-**production** | https://api.wirelessregistry.com/v2/pins
+**testing** | http://testapi.wirelessregistry.com/v1/pins
+**production** | https://api.wirelessregistry.com/v1/pins
 
 
 ###3. GET v2/pins/count
 
 SERVER TYPE | URL
 ----------- | ---------------
-**testing** | http://testapi.wirelessregistry.com/v2/pins/count
-**production** | https://api.wirelessregistry.com/v2/pins/count
+**testing** | http://testapi.wirelessregistry.com/v1/pins/count
+**production** | https://api.wirelessregistry.com/v1/pins/count
 
 
 ---
