@@ -1,4 +1,4 @@
-#Proximal API v1.0 Scott
+#Proximal API v1.0
 
 ##Introduction
 
