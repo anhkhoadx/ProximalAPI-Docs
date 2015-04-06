@@ -179,7 +179,7 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **wirelessName** | required | _string_ | valid Wireless Name | Wireless Name where the pin should be added
 **hardwareID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
-**AdID** | optional | _string_ | see grammar below | the pseduo-random base 64 bitstring associated with Android, iOS and Windows phones |
+**AdID** | optional | _string_ | see grammar below | The pseduo-random base 64 bitstring associated with Android, iOS and Windows phones |
 **type** | required | _string_ | valid standard or custom pin type | Type of the pin being added
 **data** | required | _text_ | Max 65K chars | This is the content added, depending on the type used
 **label** | optional | _string_ | Max 255 chars open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content
@@ -188,7 +188,9 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 
 > **AdID Grammar:** 
 AdID ::= Type + "^" + Value 
+
 Type ::= "ios_ifa" | "google_aid" | "windows_aid"
+
 Value ::= a base64 string encoding the device's AdID
 
 
