@@ -179,11 +179,17 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **wirelessName** | required | _string_ | valid Wireless Name | Wireless Name where the pin should be added
 **hardwareID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
+**AdID** | optional | _string_ | see grammar below | the pseduo-random base 64 bitstring associated with Android, iOS and Windows phones |
 **type** | required | _string_ | valid standard or custom pin type | Type of the pin being added
 **data** | required | _text_ | Max 65K chars | This is the content added, depending on the type used
 **label** | optional | _string_ | Max 255 chars open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content
 
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
+
+> **AdID Grammar:** 
+AdID ::= Type + "^" + Value 
+Type ::= "ios_ifa" | "google_aid" | "windows_aid"
+Value ::= a base64 string encoding the device's AdID
 
 
 ###B. RESPONSE
@@ -242,6 +248,7 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
 **hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
+**AdID** | optional | _string_ | see grammar above | the pseduo-random base 64 bitstring associated with Android, iOS and Windows phones |
 **types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
 **startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request
 **endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request
