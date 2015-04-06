@@ -187,11 +187,9 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
 > **AdID Grammar:** 
-AdID ::= Type + "^" + Value 
-
-Type ::= "ios_ifa" | "google_aid" | "windows_aid"
-
-Value ::= a base64 string encoding the device's AdID
+> **AdID** ::= Type + "^" + Value 
+> **Type** ::= "ios_ifa" | "google_aid" | "windows_aid"
+> **Value** ::= a base64 string encoding the device's AdID
 
 
 ###B. RESPONSE
