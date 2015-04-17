@@ -179,7 +179,7 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **wirelessName** | required | _string_ | valid Wireless Name | Wireless Name where the pin should be added
 **hardwareID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
-**AdID** | optional | _string_ | see grammar below | The pseduo-random base 64 bitstring associated with Android, iOS and Windows phones |
+**AdID** | optional | _string_ | see grammar below | The pseduo-random bitstring associated with Android, iOS and Windows phones |
 **type** | required | _string_ | valid standard or custom pin type | Type of the pin being added
 **data** | required | _text_ | Max 65K chars | This is the content added, depending on the type used
 **label** | optional | _string_ | Max 255 chars open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content
@@ -189,7 +189,7 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 > **AdID Grammar:** <br/>
 > **AdID** ::= Type + "^" + Value <br/>
 > **Type** ::= "ios_ifa" | "google_aid" | "windows_aid" <br/>
-> **Value** ::= a base64 string encoding the device's AdID
+> **Value** ::= device's AdID
 
 
 ###B. RESPONSE
@@ -236,6 +236,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
     [listenerID] => 'B1:C2:FC:D9:CD:10'
     [type] => 'image'
     [data] => 'https://wirelessregistry.com/assets/img/default-pin.png'
+	[AdID] => 'ios_ifa^AAAAAAAAA-BBBB-CCCC-1111-222222220000
 
 ---
 
@@ -248,7 +249,7 @@ PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 **wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
 **hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
 **listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call
-**AdID** | optional | _string_ | see grammar above | the pseduo-random base 64 bitstring associated with Android, iOS and Windows phones |
+**AdID** | optional | _string_ | see grammar above | the pseduo-random bitstring associated with Android, iOS and Windows phones |
 **types** | required | _array_ of _string_ | valid standard or custom pin type | Pin types requested
 **startDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request
 **endDate** | optional | _string_ | String-formatted date on the pattern "MM/DD/YYYY hh:mm:ss" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request
