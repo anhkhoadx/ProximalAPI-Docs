@@ -12,13 +12,13 @@ The Proximal API makes use of the following concepts defined below: wireless nam
   
 ####1. Wireless Name
 
-a) **Wi-Fi and Bluetooth Name**
+**a) Wi-Fi and Bluetooth Name**
  
 A Wireless Name is a word or phrase, often readable, transmitted from a wireless device as an ID string or as a form of device or network identification. The Proximal API currently responds to wireless names 1 to 32 characters (32 bytes) in length that typically correspond to the Service Set Identifier (SSID) of a Wi-Fi or Bluetooth device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of the device’s networking hardware.
 
 A new device typically has an SSID that is set by default by its manufacturer. The SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs, and home or office wireless network routers. You can register the wireless name already used by a device, or register a preferred wireless name and change the name on the device accordingly. Many devices can use the same name, but a particular name can only have one owner. A number of devices (such as routers) can transmit several or many wireless names simultaneously. The Proximal API accepts a wide variety of wireless name strings that may be detected in real use situations.
 
-b) **BLE Beacon Identifier**
+**b) BLE Beacon Identifier**
 
 The second major group of wireless names to which the API responds are Bluetooth Low Energy (BLE) or Bluetooth Smart identifiers. The first format accepted is the common BLE ID format (Type1), which is generally recognized as iBeacon(TM) (trademark of Apple Corp). This type of proximal signal is usually used in low-cost BLE transmitters that mobile devices can detect and use to initiate functions in a mobile app. The Wireless Registry is the first time that Beacon IDs can be registered and their signals associated to meaning and content across devices and across apps. Any device that detects the beacon ID can check the Proximal API for that content and contribute to it. Beacon owners control their transmitted beacon IDs and the content associated to them.
 
@@ -30,7 +30,7 @@ Any Beacon UUID can be registered. The UUID format is a 16 byte ID string entere
 
 See http://en.wikipedia.org/wiki/iBeacon for more details about about Apple Inc.’s beacon technology. Other beacon formats are either in use today or will be released shortly in the rapidly growing field of proximal beacons.
 
-c) **LTE Direct Expression**
+**c) LTE Direct Expression**
 
 The Proximal API, when applied to LTE Direct, is referred to as an Expression Name Server. The Wireless Registry is working with partners to demo the Expression Name Server in future.
 
@@ -38,7 +38,7 @@ The Proximal API, when applied to LTE Direct, is referred to as an Expression Na
 
 In the current release, our system supports two main types of hardware IDs:
 
-a) **MAC address**
+**a) MAC address**
 
 The most common hardware ID used by our system is the **media access control address** (**MAC address**), one of the most frequently detected wireless ID signals today. It is a unique identifier assigned to network interfaces in most IEEE 802 network technologies, including Ethernet. In Wi-Fi and Bluetooth devices, the MAC address is transmitted around the device to identify it to other devices in the immediate area.
   
@@ -59,7 +59,7 @@ We also accept other formats, although these converted to the normalized version
 
 See http://en.wikipedia.org/wiki/MAC_address for more details about MAC addresses.
 
-b) **IMEI**
+**b) IMEI**
 
 The International Mobile Station Equipment Identity (IMEI) is a number, usually unique, that identifies most mobile phones (i.e., GSM, UMTS, LTE and iDEN), as well as some satellite phones. It is usually found printed inside the battery compartment of the phone, but can also be displayed on-screen on most phones by entering *#06# on the dialpad, or alongside other system information in the settings menu on smartphone operating systems.
 
@@ -93,7 +93,7 @@ The Proximal API is un-metered and free. The system is supported via The Wireles
 
 The system supports three main categories of pins: **standard pins**, **profile pins**, and **custom pins**. Standard and profile pins are secured via the wireless name owner's complete control over all standard pins through the registration portal, regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they manage. However, wireless name and hardware ID owners can still remove all data from their signals, including custom pins, which are then moved to suitable alternatives.
 
-a) **Standard pins**
+**a) Standard pins**
 
 Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are _always_ visible on our portal (https://reg.wirelessregistry.com) and are therefore not suited for private information.
 
@@ -113,7 +113,7 @@ Standard pins must be created on a single wireless name or wireless name ~ hardw
 
 Standard pins are publicly viewable unless deleted or blocked by the wireless name owner. When an application requests pins associated to a wireless name or hardware ID it encounters, it can request all standard (public) pins, or – in the interest of not being overwhelmed – it may request only a certain type of standard pin, such as streamingMedia. Because a large number of wireless names and hardware IDs can be checked at once (for example, 200 wireless names detected in a single location), pin types can be used to refine the search to the app developer’s needs.
 
-b) **Profile pins**
+**b) Profile pins**
 
 Profile pins are similar to standard pins, except that they are read-only. Profile pins are managed either by The Wireless Registry registrants through The Wireless Registry registration portal, or via an authorized third-party registrar. Queries for profile pins must specify the pin type (they are not returned on a query with a blank pin type). Profiles pins and pin values cannot be edited or added via the Proximal API.
 
@@ -135,7 +135,7 @@ PIN TYPE | DATA TYPE | DESCRIPTION
 **linkedName** | _string_ | Returns the Name linked to the Mac or beacon (only for Verified MACs and beacons).
 **profilePublicName** | _string_ | Returns the Public Name of the user account linked to the Mac or beacon.
 
-c) **Custom pins**
+**c) Custom pins**
 
 In addition to the standard pin types, we also allow custom pin types to be set up 
 In addition to the standard and profile pin types, The Wireless Registry Proximal API users may also create custom pin types. These never appear on our portal and can only be displayed in third-party applications, via the Proximal API.
@@ -150,9 +150,11 @@ Custom pins can be created on an array of one to ten wirelessName, hardwareID, b
 
 Unlike standard pins, custom pins cannot be retrieved without being explicitly requested in the query. The requester must know the custom pin type and query for that type. There are currently no pin type parameter ranges or wildcards.
 
-d) **Group/Pattern Pins**
+**d) Group/Pattern Pins**
 
 Custom pins to wireless ID string groups and patterns are in performance testing with partners.
+
+#####Parameter Notes
 
 **Pin Use Combinations**
 
