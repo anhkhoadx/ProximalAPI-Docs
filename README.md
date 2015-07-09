@@ -124,11 +124,10 @@ The system currently supports the following profile pin types:
 
 PIN TYPE | DATA TYPE | DESCRIPTION
 -------- | --------- | --------
-profile** | _text_	| Returns all profile items associated to a wireless name by the registered owner — all items in this list.
-profileName** | _text_	Any wireless signal can be checked for a Wireless Name it is linked to. This is helpful for hardwareIDs such as MAC addresses detected without wirelessNames or BLE Beacons detected without readable names.
-
-**profileDescription** | _text_	
-**profilePicture** | _url_ | Imgur url.
+**profile** | _text_ | Returns all profile items associated to a wireless name by the registered owner — all items in this list.
+**profileName** | _text_ | Any wireless signal can be checked for a Wireless Name it is linked to. This is helpful for hardwareIDs such as MAC addresses detected without wirelessNames or BLE Beacons detected without readable names.
+**profileDescription** | _text_ |
+**profilePicture** | _url_ Imgur url.
 **profileFacebook, profileTwitter, profileLinkedIn, profileGoogle+, profilePinterest** | _social_ _account url_ | Facebook, Twitter, Linkedin, Google+, Pinterest custom URL (all four can exist at once).
 **profileUrl** | _url_ | Any custom url chosen by the name owner.
 **profileEmail** | _email_ | Email address if the owner has decided to share.
