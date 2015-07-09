@@ -89,7 +89,7 @@ The Proximal API is also the first to be integrated into The Wireless Registry I
  
 The Proximal API is un-metered and free. The system is supported via The Wireless Registry ownership model rather than an API usage-based model.
 
-#####Pin Types
+######Pin Types
 
 The system supports three main categories of pins: **standard pins**, **profile pins**, and **custom pins**. Standard and profile pins are secured via the wireless name owner's complete control over all standard pins through the registration portal, regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they manage. However, wireless name and hardware ID owners can still remove all data from their signals, including custom pins, which are then moved to suitable alternatives.
 
@@ -97,15 +97,15 @@ a) **Standard pins**
 
 Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are _always_ visible on our portal (https://reg.wirelessregistry.com) and are therefore not suited for private information.
 
-At this moment the system supports the following standard types:
+The system currently supports the following standard pin types:
 
-PIN TYPE | DATA TYPE | DATA CONTENT VALUE(S) | DESCRIPTION
+PIN TYPE | DATA TYPE | DATA CONTENT VALUE(s) | DESCRIPTION
 -------- | --------- | -------- | -----------
 **image** | _text_ | max 65K chars | The path to an image file. Usually hosted on imgur.com, although any other server or image hosting service can be used.
 **text** | _text_ | max 65K chars |Generic textual message.
 **url** | _text_ | max 65K chars | Generic URL path.
 **streamingMedia** | _text_ | max 65K chars | URL path to a streaming audio or video resource: YouTube, Vimeo, etc.
-**latLongSurvey** | _number/number_ | number/number, latitudes (-90 to 90), longitudes (-180 to 180), south latitudes and west longitudes have a minus sign  (recommend 5-9 digits precision, such as 38.90970230) | Generally a simple lat-long pinned from any mobile app. Note these pins are crowd-contributed. See profile pins below for a related lat-long type.
+**latLongSurvey** | _number/number_ | number/number, latitudes (-90 to 90), longitudes (-180 to 180), south latitudes and west longitudes having a minus sign  (five to nine digit precision, such as 38.90970230, recommended) | Generally a simple lat-long pinned from any mobile app. Note these pins are crowd-contributed. See profile pins below for a related lat-long type.
 
 Standard pins must be created on a single wireless name or wireless name ~ hardware ID combination at a time. For example, a standard pin could be pinning a photo to the wireless name of a restaurant. Any app on any device could check the Proximal API for content associated with that restaurant's wireless name, immediately get the pin, and then render the photo.
 
@@ -117,10 +117,7 @@ b) **Profile pins**
 
 Profile pins are similar to standard pins, except that they are read-only. Profile pins are managed either by The Wireless Registry registrants through The Wireless Registry registration portal, or via an authorized third-party registrar. Queries for profile pins must specify the pin type (they are not returned on a query with a blank pin type). Profiles pins and pin values cannot be edited or added via the Proximal API.
 
-Profile pin queries on Verified MACs (coming soon) and Beacon IDs will return the profile pins for the Wireless Name they are linked to. Verified MACs and beacon IDs can only be associated to one Wireless Name at a time.
-
 The system currently supports the following profile pin types:
-
 
 PIN TYPE | DATA TYPE | DESCRIPTION
 -------- | --------- | --------
@@ -135,21 +132,30 @@ PIN TYPE | DATA TYPE | DESCRIPTION
 **hardwareDefinition** | _url_ | HardwareIDs may have a hardware definition such as a Wolfram Connected Devices URL: http://devices.wolfram.com/devices/vitagoods-wrist-bluetooth-travel-blood-pressure-monitor-vs-4300.html.
 **registeredLatLong** | _number/number_ | An owner may specify a lat-long they wish to associate with registered beacon IDs. Latitudes (-90 to 90), Longitudes (-180 to 180). Beacon IDs may have values available.
 **bleMacAddress** | _0123456789ab_ | Some registered beacon IDs may have MACs associated to them by their owner.
-**linkedName** | _string_ | returns the Name linked to the Mac or beacon (only for Verified MACs and beacons).
-**profilePublicName** | _string_ | returns the Public Name of the user account linked to the Mac or beacon.
+**linkedName** | _string_ | Returns the Name linked to the Mac or beacon (only for Verified MACs and beacons).
+**profilePublicName** | _string_ | Returns the Public Name of the user account linked to the Mac or beacon.
 
-b) **Custom pins**
+c) **Custom pins**
 
-In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types. The content field is max 65K chars. 
+In addition to the standard pin types, we also allow custom pin types to be set up 
+In addition to the standard and profile pin types, The Wireless Registry Proximal API users may also create custom pin types. These never appear on our portal and can only be displayed in third-party applications, via the Proximal API.
 
-Custom pin types are defined by the API user and these pins cannot be retrieved via the API unless the pin type is included correctly in the query. In this way, custom pins can be kept private with pin types that are long hashes kept known only to the developer, or you can share your custom pin types if you want others to have access to your pins.
- 
-Custom pins can be created on an array of 1 to 10 Wireless Name, Wireless Name ~ Hardware ID, or Hardware ID alone combinations at a time. An example of a custom pin would be an application pinning a message or user ID to the top 5 strongest MAC address signals in a room. In this case other installs of that same app can retrieve those pins with the app specific custom pin type simply by checking all detected MACs against the API and the correct custom pin type known only to that app.
+Unlike standard and profile pin types, custom pins are inherently definite and secure. They require the single and specific custom pin type of interest to the developer (usually defined by the developer) amid a group of wireless names or IDs detected by the device running the application.
 
-Note that unlike standard pins, custom pins can never be retrieved without being explicitly requested in the query. The requester must know the custom pin type and query for that type. There are no pin type parameter ranges or wildcards at this time.
+A custom pin type's length is restricted to between 25 and 255 characters. No custom type pin of fewer than 25 characters is permitted, because that space is set aside for additional expansion of the standard pin types. As with standard pin types, however, the content field has a maximum of 65K characters.
+
+Custom pin types are defined by the Proximal API user. Pins cannot be retrieved via the Proximal API unless the pin type is included in the query. In this way, custom pins can be kept private, with pin types known only to the developer. You can share your custom pin types with anyone you want to give access to your pins.
+
+Custom pins can be created on an array of one to ten wirelessName, hardwareID, beaconID, or wirelessName~hardwareID combinations at a time. A custom pin, for example, could be an application pinning a message to the top five strongest MAC address signals in a room. Other instances of the same app can then retrieve that pin by checking all detected MACs against the Proximal API and with the correct, app-specific custom pin type known only to that app.
+
+Unlike standard pins, custom pins cannot be retrieved without being explicitly requested in the query. The requester must know the custom pin type and query for that type. There are currently no pin type parameter ranges or wildcards.
+
+d) **Group/Pattern Pins**
+
+Custom pins to wireless ID string groups and patterns are in performance testing with partners.
 
 **Pin Use Combinations**
- 
+
 When custom pins are associated with both stationary signals such as Wi-Fi access points or ibeacons, as well as to the signals of moving devices such as MAC addresses and iPhone-based ibeacons, a wide range of new contextual awareness and device-to-device sharing of pin data is possible.
 
 Creative uses of pins allow 2 mobile app installs to deduce the are immediately proximal via detecting the same 2 or 3 ambient signals - quickly and without the need for GPS check-ins. Other applications pin custom triggers such as game tokens to ambient signals that persist for days or months that other running apps detect when checking ambient signals. Still others pin usernames or statistics so other devices can see how many users are or have been in a location over a defined period.
