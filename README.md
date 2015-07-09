@@ -127,7 +127,7 @@ PIN TYPE | DATA TYPE | DESCRIPTION
 **profile** | _text_ | Returns all profile items associated to a wireless name by the registered owner — all items in this list.
 **profileName** | _text_ | Any wireless signal can be checked for a Wireless Name it is linked to. This is helpful for hardwareIDs such as MAC addresses detected without wirelessNames or BLE Beacons detected without readable names.
 **profileDescription** | _text_ |
-**profilePicture** | _url_ Imgur url.
+**profilePicture** | _url_ | Imgur url.
 **profileFacebook, profileTwitter, profileLinkedIn, profileGoogle+, profilePinterest** | _social_ _account url_ | Facebook, Twitter, Linkedin, Google+, Pinterest custom URL (all four can exist at once).
 **profileUrl** | _url_ | Any custom url chosen by the name owner.
 **profileEmail** | _email_ | Email address if the owner has decided to share.
@@ -135,8 +135,8 @@ PIN TYPE | DATA TYPE | DESCRIPTION
 **hardwareDefinition** | _url_ | HardwareIDs may have a hardware definition such as a Wolfram Connected Devices URL: http://devices.wolfram.com/devices/vitagoods-wrist-bluetooth-travel-blood-pressure-monitor-vs-4300.html.
 **registeredLatLong** | _number/number_ | An owner may specify a lat-long they wish to associate with registered beacon IDs. Latitudes (-90 to 90), Longitudes (-180 to 180). Beacon IDs may have values available.
 **bleMacAddress** | _0123456789ab_ | Some registered beacon IDs may have MACs associated to them by their owner.
-**linkedName** | _string_ | returns the Name linked to the Mac or beacon (only for Verified MACs and beacons)
-**profilePublicName** | _string_ | returns the Public Name of the user account linked to the Mac or beacon
+**linkedName** | _string_ | returns the Name linked to the Mac or beacon (only for Verified MACs and beacons).
+**profilePublicName** | _string_ | returns the Public Name of the user account linked to the Mac or beacon.
 
 b) **Custom pins**
 
