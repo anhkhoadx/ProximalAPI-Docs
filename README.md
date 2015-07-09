@@ -228,25 +228,30 @@ The Proximal API can apply to signals independently of the technology or spectru
 
 Throughout the Proximal API documentation the use of the tilde “~” character indicates a wireless name (~MyWirelessName) as well as a separator between wireless names and a related hardware ID (MyWirelessName~AB:12:AB:12:AB:12). Users are welcome to choose whether or not to use ~ as the first character in a wireless name. The Proximal API perceives "MyWirelessName” and “~MyWirelessName” as the same. Spaces are likewise ignored in any combination in all wireless names and hardware ID fields.
 
+--
+
 ##Resources
 
 ###Introduction
 
-The Proximal API is a live public system that all are welcome to use. The use of the API is not restricted in any way. The system responds to spamming in a manner similar to email spam management - if a source appears to be a spammer it may be throttled or otherwise managed. The system is designed to be as open and unrestricted as possible for all users and devices.
+The Proximal API is a live public system that all are welcome to use subject to the terms of the API License Agreement. It is designed to be as open and unrestricted as possible for all users and devices. The system responds to spamming in a manner similar to email spam management, such that if a source appears to be a spammer it may be throttled or otherwise managed. 
 
-The API infrastructure is supported by several top nodes around the world. As system demand increases, new nodes are added, both dynamicaly by the system itself in some cases, and strategically placed in other cases.
+The Proximal API infrastructure is supported by several top nodes around the world, and nodes are added with increased demand, dynamically (by the system itself) or strategically.
 
-For testing purposes, developers may pin to a range of signals that represent test signals and use test contentTypes of their own selection. Other testing and configuration options will be available as the Proximal API protocol is published over time.
+For testing purposes, developers may pin to a range of signals that represent test signals and use test contentTypes of their own selection.
 
 The methods below include Save, Get, and Command; the first Command (Count) is indicated below and more are in testing to be released on an ongoing basis.
 
 Pins cannot be edited and pins are only deleted via the action of the wireless name or hardware ID owner. Pins do not expire, however they are created and retrieved via pin creation date/time parameters.
 
+###API Entry Points
 
 
----
 
-##Entry Points
+
+
+
+
 
 Each API method has two entry points, depending on the purpose of use. One, on testing servers, is used for testing and development. The second one, on the production servers, is to be used only on the applications released to the application stores. The methods include POST, GET, and COUNT; pins cannot be edited and pins are only deleted via the action of the wireless name or hardware ID owner. Pins do not expire.
 
