@@ -81,8 +81,6 @@ Developers can pin codes that represent content on their servers, whereby an ins
  
 Some developers attach lists of wireless identifiers of one type to wireless identifiers of another type - so the detection of a Wi-Fi signal might reveal a list of NFC codes in a room pinned by another device which detected both.
 
-Developers may also attach lists of wireless identifiers of one type to wireless identifiers of another type. The detection of a Wi-Fi signal could thereby also reveal a list of BLE codes in the same room, pinned by another device that detected both signals. Several developers have, for example, associated a range of ambient signals to beacon IDs build things that were previously not possible.
-
 #####Pin Security and Treatment
 
 The Wireless Registry Proximal API respects the world's first industry-driven proximal signal privacy and opt-out system, managed by the Future of Privacy Forum in Washington, DC. Mobile location analytics companies from around the world participate by respecting the privacy preferences of individuals who opt out their proximal signals. Developers using the Proximal API are **automatically covered by this industry-leading privacy best practice**. See www.futureofprivacy.org for more information.
@@ -113,20 +111,33 @@ Standard pins must be created on a single wireless name or wireless name ~ hardw
 
 **Note:** The Proximal API can also be queried with no pin type parameter specified. It will respond with all standard pins associated to the checked wireless name(s), but not with custom pins or profile pins.
 
-Further standard types are also scheduled to be added in the near future. Here is a preview for a few of them:
+Standard pins are publicly viewable unless deleted or blocked by the wireless name owner. When an application requests pins associated to a wireless name or hardware ID it encounters, it can request all standard (public) pins, or – in the interest of not being overwhelmed – it may request only a certain type of standard pin, such as streamingMedia. Because a large number of wireless names and hardware IDs can be checked at once (for example, 200 wireless names detected in a single location), pin types can be used to refine the search to the app developer’s needs.
 
-- facebook
-- twitter
-- pinterest
-- linkedin
-- email
-- phone
+b) **Profile pins**
 
-...and many more.
+Profile pins are similar to standard pins, except that they are read-only. Profile pins are managed either by The Wireless Registry registrants through The Wireless Registry registration portal, or via an authorized third-party registrar. Queries for profile pins must specify the pin type (they are not returned on a query with a blank pin type). Profiles pins and pin values cannot be edited or added via the Proximal API.
 
-Standard pins must be created on a single Wireless Name or Wireless Name ~ Hardware ID combination at a time. An example of a standard pin would be pining a picture to the Wireless Name of a restaurant. Any app on any device can check the open API for content associated with the Wireless Name of the restaurant and will get the pin immediately and could render the picture. 
+Profile pin queries on Verified MACs (coming soon) and Beacon IDs will return the profile pins for the Wireless Name they are linked to. Verified MACs and beacon IDs can only be associated to one Wireless Name at a time.
 
-It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins associated to the Wireless Name checked, but only standard pins.
+The system currently supports the following profile pin types:
+
+
+PIN TYPE | DATA TYPE | DESCRIPTION
+-------- | --------- | --------
+profile** | _text_	| Returns all profile items associated to a wireless name by the registered owner — all items in this list.
+profileName** | _text_	Any wireless signal can be checked for a Wireless Name it is linked to. This is helpful for hardwareIDs such as MAC addresses detected without wirelessNames or BLE Beacons detected without readable names.
+
+**profileDescription** | _text_	
+**profilePicture** | _url_ | Imgur url.
+**profileFacebook, profileTwitter, profileLinkedIn, profileGoogle+, profilePinterest** | _social_ _account url_ | Facebook, Twitter, Linkedin, Google+, Pinterest custom URL (all four can exist at once).
+**profileUrl** | _url_ | Any custom url chosen by the name owner.
+**profileEmail** | _email_ | Email address if the owner has decided to share.
+**profilePhone** | _phone number_ | Phone number if the owner has decided to share.
+**hardwareDefinition** | _url_ | HardwareIDs may have a hardware definition such as a Wolfram Connected Devices URL: http://devices.wolfram.com/devices/vitagoods-wrist-bluetooth-travel-blood-pressure-monitor-vs-4300.html.
+**registeredLatLong** | _number/number_ | An owner may specify a lat-long they wish to associate with registered beacon IDs. Latitudes (-90 to 90), Longitudes (-180 to 180). Beacon IDs may have values available.
+**bleMacAddress** | _0123456789ab_ | Some registered beacon IDs may have MACs associated to them by their owner.
+**linkedName** | _string_ | returns the Name linked to the Mac or beacon (only for Verified MACs and beacons)
+**profilePublicName** | _string_ | returns the Public Name of the user account linked to the Mac or beacon
 
 b) **Custom pins**
 
