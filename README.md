@@ -2,39 +2,45 @@
 
 ##Introduction
 
-###Definitions
+The Wireless Registry Proximal API enables the association of content to wireless ID strings and the subsequent retrieval of that content. Content is associated via The Wireless Registry registration portal by owners of wireless ID strings, or directly via the Proximal API by anyone. Wireless devices generally detect Wireless Names and Hardware IDs from the signals around them in a range of combinations. These signals can vary from Wi-Fi names, Bluetooth names, and MAC addresses, to BLE beacon IDs, RFID numbers, and a number of similar wireless expressions and IDs yet to come via new technologies and standards. The Wireless Registry’s Proximal API is the first open API to allow any device to both create and retrieve associations to any signal, while at the same time respecting an industry-approved opt-out mechanism. It gives the registered owners of these signals full control over any and all associated content. 
 
-The Wireless Registry Proximal API allows the association of content to wireless ID strings and the subsequent retrieval of this content. Wireless devices generally detect Wireless Names and Hardware IDs around them in a range of combinations. These signals vary from Wi-Fi Names, Bluetooth names, and MAC addresses, to iBeacon IDs and a number of similar wireless expressions and IDs to come via new technologies and standards. The Proximal API outlined here is the first open API that allows any device to both create and retrieve associations to any signal, while at the same time respecting an industry approved opt-out mechanism, and enabling the full control of associated content by the registered owners of the signals involved. 
+Use of The Wireless Registry Proximal API is subject to the terms of the API License Agreement. For questions and support, please email contact@wirelessregistry.com.
+
+###Definitions
     
-The Proximal API makes use of several concepts, that are defined below.
+The Proximal API makes use of the following concepts defined below: wireless name, hardware ID, and pin.
   
 ####1. Wireless Name
 
-a) **Wi-Fi and Bluetooth Names**
+a) **Wi-Fi and Bluetooth Name**
  
-A Wireless Name is a word or phrase transmitted from a Wireless Device as an ID string or form of device or network identification. Currently the Proximal API responds to one to thirty-two characters (32 bytes) in length that typically corresponds to the SSID (Service Set Identifier) of a Wi-Fi or Bluetooth device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of a device’s networking hardware.
- 
-A new device typically has an SSID that is set by default by the device manufacturer. This SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs and wireless network routers in the home or office.
+A Wireless Name is a word or phrase, often readable, transmitted from a wireless device as an ID string or as a form of device or network identification. The Proximal API currently responds to wireless names 1 to 32 characters (32 bytes) in length that typically correspond to the Service Set Identifier (SSID) of a Wi-Fi or Bluetooth device. SSIDs are often referred to as “network names” and are broadcast by a device to all receiving devices within the broadcast radius of the device’s networking hardware.
 
-b) **iBeacon and BLE Names**
- 
-The API will respond to BLE or Bluetooth Smart identifiers. The first set of identifiers included is a special type of Wireless Name called iBeacon. iBeacon is the Apple Trademark for an indoor positioning system that Apple Inc. calls "a new class of low-powered, low-cost transmitters that can notify nearby iOS 7 devices of their presence." They can also be used, in a limited manner, by the Android operating system. The technology enables an iOS device or other hardware to send push notifications to iOS devices in close proximity.
+A new device typically has an SSID that is set by default by its manufacturer. The SSID can be manually changed on a number of devices, such as smartphones, tablets, laptops, PCs, and home or office wireless network routers. You can register the wireless name already used by a device, or register a preferred wireless name and change the name on the device accordingly. Many devices can use the same name, but a particular name can only have one owner. A number of devices (such as routers) can transmit several or many wireless names simultaneously. The Proximal API accepts a wide variety of wireless name strings that may be detected in real use situations.
 
-The accepted format for an iBeacon Wireless Name is to split it in groups of digits according to the formula: 8-4-4-12~5~5. All groups are hexadecimal, with the exception of the last two groups of 5 decimal digits. These two groups are usually called the Major and Minor values, in that order, and take values between 00000 and 65535.
+b) **BLE Beacon Identifier**
+
+The second major group of wireless names to which the API responds are Bluetooth Low Energy (BLE) or Bluetooth Smart identifiers. The first format accepted is the common BLE ID format (Type1), which is generally recognized as iBeacon(TM) (trademark of Apple Corp). This type of proximal signal is usually used in low-cost BLE transmitters that mobile devices can detect and use to initiate functions in a mobile app. The Wireless Registry is the first time that Beacon IDs can be registered and their signals associated to meaning and content across devices and across apps. Any device that detects the beacon ID can check the Proximal API for that content and contribute to it. Beacon owners control their transmitted beacon IDs and the content associated to them.
+
+Any Beacon UUID can be registered. The UUID format is a 16 byte ID string entered at hexadecimal digits in the format: 12345678-ABCD-1234-ABCD-123456ABCDEF, and followed by two 16 bit characters expressed as integers: Major (0-65535) and Minor (0-65535). The three components are separated by the ~ separator.
 
     Example of an iBeacon Wireless Name:
 
     E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00000~00000
 
-See http://en.wikipedia.org/wiki/IBeacon for more details about iBeacon.
+See http://en.wikipedia.org/wiki/iBeacon for more details about about Apple Inc.’s beacon technology. Other beacon formats are either in use today or will be released shortly in the rapidly growing field of proximal beacons.
+
+c) **LTE Direct Expression**
+
+The Proximal API, when applied to LTE Direct, is referred to as an Expression Name Server. The Wireless Registry is working with partners to demo the Expression Name Server in future.
 
 ####2. Hardware ID
 
-Our system supports at this moment two main types of Hardware IDs:
+In the current release, our system supports two main types of hardware IDs:
 
 a) **MAC address**
 
-The most common Hardware ID used by our system is the MAC address. A **media access control address** (**MAC address**) is a unique identifier assigned to network interfaces for communications on the physical network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet; and in the case of Wi-Fi and Bluetooth devices, this MAC address is transmitted around the device to identify it to other devices in the immediate area.
+The most common hardware ID used by our system is the **media access control address** (**MAC address**), one of the most frequently detected wireless ID signals today. It is a unique identifier assigned to network interfaces in most IEEE 802 network technologies, including Ethernet. In Wi-Fi and Bluetooth devices, the MAC address is transmitted around the device to identify it to other devices in the immediate area.
   
 There are many ways of writing a MAC address. For ease of reading, our system converts all valid MAC addresses to what we call _the normalized version_. This is a variant of the standard IEEE 802, with six groups of capitalized hexadecimal digits, separated by colons (:) in transmission order.
 
@@ -42,7 +48,7 @@ There are many ways of writing a MAC address. For ease of reading, our system co
 
     01:23:45:67:89:AB
 
-We also accept other formats as well, although they are all converted to the normalized version:
+We also accept other formats, although these converted to the normalized version:
 
     Other accepted MAC address formats:
 
@@ -55,48 +61,57 @@ See http://en.wikipedia.org/wiki/MAC_address for more details about MAC addresse
 
 b) **IMEI**
 
-The International Mobile Station Equipment Identity or IMEI is a number, usually unique, to identify most mobile phones (i.e., GSM, UMTS, LTE and iDEN), as well as some satellite phones. It is usually found printed inside the battery compartment of the phone, but can also be displayed on-screen on most phones by entering *#06# on the dialpad, or alongside other system information in the settings menu on smartphone operating systems.
+The International Mobile Station Equipment Identity (IMEI) is a number, usually unique, that identifies most mobile phones (i.e., GSM, UMTS, LTE and iDEN), as well as some satellite phones. It is usually found printed inside the battery compartment of the phone, but can also be displayed on-screen on most phones by entering *#06# on the dialpad, or alongside other system information in the settings menu on smartphone operating systems.
 
-As of 2004, the format of the IMEI is AA-BBBBBB-CCCCCC-D, where all the digits are decimal. We, however use a slightly different version, replacing the "-" separator with "~".
+As of 2004, the format of the IMEI is AA-BBBBBB-CCCCCC-D, where all the digits are decimal. However, The Wireless Registry uses a slightly different version, replacing the "-" (dash) separator with "~" (tilde) for identification and clarity.
 
     AA~BBBBBB~CCCCCC~D
 
 See http://en.wikipedia.org/wiki/IMEI for more details about IMEI.
 
-####3. Pins
+c) **Other hardware IDs**
 
-A pin is an information token that is attached to a Wireless Name or a Hardware ID, or a combination of both Wireless Name and Hardware ID. Pins are the basic unit that is accepted by the API. Pins are text strings from 1-65k characters and while standard pin types expect linkages to the matching type of content for that pin type, custom pins can hold any combination codes and information that a developer would like to use. A wide range of use cases is possible.
+Wireless names go together with hardware IDs. The Wireless Registry's system is flexible, allowing new hardware ID formats to be published as they become available.
 
-Some developers pin codes that represent content on their servers so that any instance of their application can check surrounding detectable signals and retrieve those codes left by other instances of their app on the same signals -  providing app to app communication without GPS or check-ins. 
+####3. Pin
+
+A pin is an information token that is attached to a wireless name or a hardware ID, or a combination of both wireless name and hardware ID. Pins are the basic unit that is accepted by the API. Pins are text strings of 1-65K characters in length, and while standard pin types expect linkages to the content matching that pin type, custom pins can hold any combination codes and information that a developer wishes to use. A wide range of innovative use-cases are possible.
+
+Developers can pin codes that represent content on their servers, whereby an instance of their application can check surrounding detectable signals and retrieve codes left on those signals by other instances of that application. This provides app-to-app communication, without GPS or check-ins, cross-device and cross-app, and in many different combinations.
  
 Some developers attach lists of wireless identifiers of one type to wireless identifiers of another type - so the detection of a Wi-Fi signal might reveal a list of NFC codes in a room pinned by another device which detected both.
 
+Developers may also attach lists of wireless identifiers of one type to wireless identifiers of another type. The detection of a Wi-Fi signal could thereby also reveal a list of BLE codes in the same room, pinned by another device that detected both signals. Several developers have, for example, associated a range of ambient signals to beacon IDs build things that were previously not possible.
+
 #####Pin Security and Treatment
 
-The API respects the World's first industry accepted proximal signal privacy and opt-out system which is managed by the Future of Privacy Forum in Washington, DC. Mobile detection data analytics companies from around the world are part of this system which protects the privacy of individuals who register their proximal signals. Developers using the Proximal API are **automatically covered by this industry leading privacy best practice**. Please see www.futureofprivacy.org for more detailed information.
+The Wireless Registry Proximal API respects the world's first industry-driven proximal signal privacy and opt-out system, managed by the Future of Privacy Forum in Washington, DC. Mobile location analytics companies from around the world participate by respecting the privacy preferences of individuals who opt out their proximal signals. Developers using the Proximal API are **automatically covered by this industry-leading privacy best practice**. See www.futureofprivacy.org for more information.
  
-The API is also the first proximal API to be integrated into The Wireless Registry Inc. system of Wireless Name and ID registration. This global system allows individuals and businesses to register wireless names and ID strings they own and that represent them. The API **respects the content the owners proactively manage** and respects their privacy settings throughout.
+The Proximal API is also the first to be integrated into The Wireless Registry Inc. system of wireless name and ID registration. This allows individuals and businesses around the world to register wireless names and ID strings that they own and that represent them. The Proximal API **respects the content managed by signal owners**, as well as their privacy settings.
  
-The proximal API is un-metered and free. The system is supported via an Wireless Registry ownership model rather than an API usage-based model. Two types of pins are introduced below. Standard pins are secured via the wireless name owner having full control of all standard pins regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they they control the management of.
-  
-#####Pin types
+The Proximal API is un-metered and free. The system is supported via The Wireless Registry ownership model rather than an API usage-based model.
 
-Our system supports two main categories of pins: **standard pins** and **custom pins**.
+#####Pin Types
 
-a) **Standard Pins**
+The system supports three main categories of pins: **standard pins**, **profile pins**, and **custom pins**. Standard and profile pins are secured via the wireless name owner's complete control over all standard pins through the registration portal, regardless of their source. Custom pins are secured via each developer using complex and secure pin types that they manage. However, wireless name and hardware ID owners can still remove all data from their signals, including custom pins, which are then moved to suitable alternatives.
 
-Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are ALWAYS visible on our portal (https://wirelessregistry.com). Therefore they are not well suited for private information.
+a) **Standard pins**
+
+Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are _always_ visible on our portal (https://reg.wirelessregistry.com) and are therefore not suited for private information.
 
 At this moment the system supports the following standard types:
 
-PIN TYPE | DATA TYPE | DATA CONTENT VALUE(s) | DESCRIPTION
+PIN TYPE | DATA TYPE | DATA CONTENT VALUE(S) | DESCRIPTION
 -------- | --------- | -------- | -----------
 **image** | _text_ | max 65K chars | The path to an image file. Usually hosted on imgur.com, although any other server or image hosting service can be used.
-**text** | _text_ | max 65K chars | A generic textual message.
-**url** | _text_ | max 65K chars | A generic URL path.
-**audio** | _text_ | max 65K chars | A URL path to a streaming media resource: audio, video, pages from YouTube, Vimeo, etc.
+**text** | _text_ | max 65K chars |Generic textual message.
+**url** | _text_ | max 65K chars | Generic URL path.
+**streamingMedia** | _text_ | max 65K chars | URL path to a streaming audio or video resource: YouTube, Vimeo, etc.
+**latLongSurvey** | _number/number_ | number/number, latitudes (-90 to 90), longitudes (-180 to 180), south latitudes and west longitudes have a minus sign  (recommend 5-9 digits precision, such as 38.90970230) | Generally a simple lat-long pinned from any mobile app. Note these pins are crowd-contributed. See profile pins below for a related lat-long type.
 
-> **Note:** The **audio** pin type is scheduled to be changed to **streamingmedia**
+Standard pins must be created on a single wireless name or wireless name ~ hardware ID combination at a time. For example, a standard pin could be pinning a photo to the wireless name of a restaurant. Any app on any device could check the Proximal API for content associated with that restaurant's wireless name, immediately get the pin, and then render the photo.
+
+**Note:** The Proximal API can also be queried with no pin type parameter specified. It will respond with all standard pins associated to the checked wireless name(s), but not with custom pins or profile pins.
 
 Further standard types are also scheduled to be added in the near future. Here is a preview for a few of them:
 
@@ -113,7 +128,7 @@ Standard pins must be created on a single Wireless Name or Wireless Name ~ Hardw
 
 It is important to note that the API can also be queried with no pin type parameter specified. In this case the API will respond with ALL standard pins associated to the Wireless Name checked, but only standard pins.
 
-b) **Custom Pins**
+b) **Custom pins**
 
 In addition to the standard pin types, we also allow custom pin types to be set up by the API users. They are NEVER displayed on our portal and can only be displayed in third party applications, via the API. Custom pin types have only one restriction: **their length must be between 25 and 255 characters**. No custom types with less than 25 characters are permitted, as we reserved that space for further expansion of the standard types. The content field is max 65K chars. 
 
