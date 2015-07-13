@@ -277,27 +277,19 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **B. Response**
 
 **Fatal error:**
+
 PARAMETER | TYPE(s) | Description
 --------- | ------- | -------
 **error** | _string_ | Short description of the fatal error.
 
-**Fatal error:**
-PARAMETER | TYPE(s) | DESCRIPTION
---------- | -------- | ----------
-**error** | _string_ | Short description of the fatal error.
-
-**Fatal Error:**
-
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
-**error** | _string_ | short description of the fatal error
-
 **Success:**
+
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
 **success** | _array_ of _string_| Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
 
 **Mixed results:**
+
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
