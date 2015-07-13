@@ -421,8 +421,8 @@ PARAMETER | TYPE | DESCRIPTION
 **c) Examples** <br/>
 **General valid data structure**
 
-devices] => Array
-    (
+	[devices] => Array
+	    (
         [0] => Array
             (
                 [wirelessName] => 'wn 1'
@@ -455,34 +455,34 @@ devices] => Array
     )
     [types] => Array
     (
-        [0] => 'image'
-        [1] => 'custom-type-label-of-my-own-design'
-    )
-[listenerID] => 'B1:C2:FC:D9:CD:10'
-[startDate] => '01/01/2014 00:00:00'
-[endDate] => '01/31/2014 00:00:00'
+		[0] => 'image'
+	 	[1] => 'custom-type-label-of-my-own-design'
+	  )
+	[listenerID] => 'B1:C2:FC:D9:CD:10'
+	[startDate] => '01/01/2014 00:00:00'
+	[endDate] => '01/31/2014 00:00:00'
 
 >> **WARNING:**
 The calls with the following structure have been deprecated. Please convert your old calls to the new format.
 
-[wirelessNames] => Array
+	[wirelessNames] => Array
+	(
+    		[0] => 'wn 1'
+        	[1] => 'wn 2'
+        )
+	[hardwareIDs] => Array
     (
-        [0] => 'wn 1'
-        [1] => 'wn 2'
-    )
-[hardwareIDs] => Array
-    (
-        [0] => '6E:AA:40:F4:8F:DA'
-        [1] => 'D8:16:13:AB:28:AD'
-    )
+    	[0] => '6E:AA:40:F4:8F:DA'
+    	[1] => 'D8:16:13:AB:28:AD'
+    	)
 [types] => Array
     (
         [0] => 'image'
         [1] => 'custom-type-label-of-my-own-design'
     )
-[listenerID] => 'B1:C2:FC:D9:CD:10'
-[startDate] => '01/01/2014 00:00:00'
-[endDate] => '01/31/2014 00:00:00'
+	[listenerID] => 'B1:C2:FC:D9:CD:10'
+	[startDate] => '01/01/2014 00:00:00'
+	[endDate] => '01/31/2014 00:00:00'
 
 
 
