@@ -1,4 +1,4 @@
-#Proximal API v2.0
+#Proximal API
 
 ##Overview
 
