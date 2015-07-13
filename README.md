@@ -248,8 +248,8 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 **Action** | **Method** | **Entry Point**
 ---------- | -----------| --------------
-**Save pins** | POST | '_https://api.wirelessregistry.com/v1/pins_'
-**Get pins** | GET | '_https://api.wirelessregistry.com/v1/pins_'
+**Save pins** | POST | https://api.wirelessregistry.com/v1/pins
+**Get pins** | GET | https://api.wirelessregistry.com/v1/pins
 
 ###Save Pins
 **A. Parameters**
