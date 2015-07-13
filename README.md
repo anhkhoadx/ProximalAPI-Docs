@@ -253,7 +253,7 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 ###Save Pins
 
-**A. Parameters**
+**a) Parameters**
 
 **PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE** | ** DESCRIPTION**
 ------|-----|------| ------ | ------ 
@@ -275,7 +275,7 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 > **Type** ::= "ios_ifa" | "google_aid" | "windows_aid" <br/>
 > **Value** ::= device's AdID
 
-**B. Response**
+**b) Response**
 
 **Fatal error:**
 
@@ -296,7 +296,7 @@ PARAMETER | TYPE  | DESCRIPTION
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
 **success** | _array_ of _string_ | Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
 
-**C. Examples** <br/>
+**c) Examples** <br/>
 **Generic valid data structure**
 
     [devices] => Array
@@ -317,11 +317,11 @@ PARAMETER | TYPE  | DESCRIPTION
     [listenerID] => 'B1:C2:FC:D9:CD:10'
     [type] => 'image'
     [data] => 'https://wirelessregistry.com/assets/img/default-pin.png'
-	[AdID] => 'ios_ifa^AAAAAAAAA-BBBB-CCCC-1111-222222220000
+    [AdID] => 'ios_ifa^AAAAAAAAA-BBBB-CCCC-1111-222222220000
 
 ###Get Pins
 
-**A. Parameters**
+**a) Parameters**
 
 **PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE** | ** DESCRIPTION**
 ------|-----|------| ------ | ------ 
@@ -350,7 +350,7 @@ PARAMETER | TYPE  | DESCRIPTION
 > **Type** ::= "ios_ifa" | "google_aid" | "windows_aid" <br/>
 > **Value** ::= device's AdID
 
-**B. Response**
+**b) Response**
 
 **Fatal error:**
 
@@ -365,9 +365,6 @@ PARAMETER | TYPE  | DESCRIPTION
 **result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**.
 **meta** | JSON _array_ | Contains metainformation about the result.
 **pins** | JSON _array_ | Contains the pins retrieved by the request. 
-
-
-[
 
 {
     "meta": {
