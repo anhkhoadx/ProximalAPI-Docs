@@ -101,7 +101,7 @@ Standard pin types are defined by The Wireless Registry, with clear rules and re
 
 The system currently supports the following standard pin types:
 
-PIN TYPE | DATA TYPE | DATA CONTENT VALUE(s) | DESCRIPTION
+**PIN TYPE** | **DATA TYPE** | **DATA CONTENT VALUE(s)** | **DESCRIPTION**
 -------- | --------- | -------- | -----------
 **image** | _text_ | max 65K chars | The path to an image file. Usually hosted on imgur.com, although any other server or image hosting service can be used.
 **text** | _text_ | max 65K chars |Generic textual message.
