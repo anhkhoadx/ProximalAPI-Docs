@@ -296,7 +296,7 @@ PARAMETER | TYPE  | DESCRIPTION
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
 **success** | _array_ of _string_ | Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
 
-**C. Examples**
+**C. Examples** <br/>
 **Generic valid data structure**
 
     [devices] => Array
