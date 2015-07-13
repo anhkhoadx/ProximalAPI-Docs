@@ -240,9 +240,9 @@ The Proximal API infrastructure is supported by several top nodes around the wor
 
 For testing purposes, developers may pin to a range of signals that represent test signals and use test contentTypes of their own selection.
 
-The methods below include Save, Get, and Command; the first Command (Count) is indicated provided.
+The methods below include Save, Get, and Command; the first Command (Count) is indicated below.
 
-Pins cannot be edited and are only deleted via the action of the wireless name or hardware ID owner. Pins do not expire but are created and retrieved via pin creation date/time parameters.
+Pins cannot be edited and can be deleted only via the action of the wireless name or hardware ID owner. Pins do not expire but are created and retrieved via pin creation date/time parameters.
 
 ###API Entry Points
 
@@ -251,7 +251,7 @@ Pins cannot be edited and are only deleted via the action of the wireless name o
 **Save pins** | POST | https://api.wirelessregistry.com/v1/pins
 **Get pins** | GET | https://api.wirelessregistry.com/v1/pins
 
-##Save 
+###Save Pins
 
 **A. Parameters**
 
