@@ -366,6 +366,9 @@ PARAMETER | TYPE  | DESCRIPTION
 **meta** | JSON _array_ | Contains metainformation about the result.
 **pins** | JSON _array_ | Contains the pins retrieved by the request. 
 
+
+[
+
 {
     "meta": {
         "count": 5
@@ -408,6 +411,8 @@ PARAMETER | TYPE  | DESCRIPTION
         }
     ]
 }
+
+]
 
 **Mixed results:**
 
