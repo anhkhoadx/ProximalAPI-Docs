@@ -248,8 +248,8 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 **Action** | **Method** | **Entry Point**
 ---------- | -----------| --------------
-**Save pins** | POST | _https://api.wirelessregistry.com/v1/pins_
-**Get pins** | GET | _https://api.wirelessregistry.com/v1/pins_
+**Save pins** | POST | '_https://api.wirelessregistry.com/v1/pins_'
+**Get pins** | GET | '_https://api.wirelessregistry.com/v1/pins_'
 
 ###Save Pins
 **A. Parameters**
@@ -277,8 +277,8 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **B. Response**
 
 **Fatal error:**
-PARAMETER | TYPE(s)  | DESCRIPTION
---------- | -------- | -----------
+PARAMETER | TYPE(s) | DESCRIPTION
+--------- | -------- | ----------
 **error** | _string_ | Short description of the fatal error.
 
 **Success:**
