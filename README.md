@@ -277,6 +277,11 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **B. Response**
 
 **Fatal error:**
+PARAMETER | TYPE(s) | Description
+--------- | ------- | -------
+**error** | _string_ | Short description of the fatal error.
+
+**Fatal error:**
 PARAMETER | TYPE(s) | DESCRIPTION
 --------- | -------- | ----------
 **error** | _string_ | Short description of the fatal error.
