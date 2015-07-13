@@ -255,20 +255,25 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 **A. Parameters**
 
-**PARAMETER** | **REQUIRED / OPTIONAL** | **Type** | **VALUE**
-------|-----|------| ------
+**PARAMETER** | **REQUIRED / OPTIONAL** | **Type** | **VALUE** | ** DESCRIPTION**
+------|-----|------| ------ | ------ 
 **devices** | required | _array_ | one or more valid **wirelessName** and **hardwareID** pairs | The set of identifiers for the devices where the content must be pinned.
 **devices → wirelessName** | required / optional (see note below) | _string_ | valid wireless name | Wireless name where the pin should be added.
 **devices → hardwareID** | required / optional (see note below) | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device where the pin must be added.
-**listenerID** | required | _string_ | valid MAC address or IMEI identifier | The Hardware ID of the wireless adapter used to detect the ambient wireless signals being used in the API call. If more than one, then the one most important for the use-case. The field is required for future functions, however the developer can enter any valid Hardware ID if the actual Hardware ID is not available.
-**AdID** | optional | _string_ | see grammar below | Valid mobile advertisment identifier.
+**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the wireless adapter used to detect the ambient wireless signals used in the API call. If more than one, then that most important for the use-case. Field required for future functions, but the developer can enter any valid hardware ID if the actual hardware ID is not available.
+**AdID** | optional | _string_ | see grammar below | Valid mobile advertisement identifier.
 **type** | required | _string_ | valid standard or custom pin type (max 255 characters) | Type of the pin being added.
 **data** | required | _text_ | max 65K chars | The content added, depending on the type used.
-**label** | optional | _text_ | max 255 chars, open, empty string by default | Unstructured field for tagging, captioning, labeling or otherwise describing the pin's content.
+**label** | optional | _text_ | max 255 chars, empty string by default | Unstructured field for tagging, captioning, labeling, or otherwise describing the pin's content.
 
+> **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
+> **Note:** If the pin type is set to _generateType_, the API endpoint will generate the type as a 44 random characters string. This value is returned in the response as **generated_pinType**.
 
-
+> **AdID Grammar:** <br/>
+> **AdID** ::= Type + "^" + Value <br/>
+> **Type** ::= "ios_ifa" | "google_aid" | "windows_aid" <br/>
+> **Value** ::= device's AdID
 
 
 
