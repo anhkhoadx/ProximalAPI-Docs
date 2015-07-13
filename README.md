@@ -367,7 +367,8 @@ PARAMETER | TYPE  | DESCRIPTION
 **pins** | JSON _array_ | Contains the pins retrieved by the request. 
 
 {
-    "meta": {
+
+"meta": {
         "count": 5
     },
     "pins": [
@@ -418,7 +419,7 @@ PARAMETER | TYPE | DESCRIPTION
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
 **success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters.
 
- **C. Examples** 
+**c) Examples** <br/>
 **General valid data structure**
 
 devices] => Array
