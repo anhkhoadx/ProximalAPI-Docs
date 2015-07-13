@@ -248,11 +248,10 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 **Action** | **Method** | **Entry Point**
 ---------- | -----------| --------------
-**Save pins** | POST | https://api.wirelessregistry.com/v1/pins
-**Get pins** | GET | https://api.wirelessregistry.com/v1/pins
+**Save pins** | POST | _https://api.wirelessregistry.com/v1/pins_
+**Get pins** | GET | _https://api.wirelessregistry.com/v1/pins_
 
 ###Save Pins
-
 **A. Parameters**
 
 **PARAMETER** | **REQUIRED / OPTIONAL** | **Type** | **VALUE** | ** DESCRIPTION**
@@ -274,6 +273,49 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 > **AdID** ::= Type + "^" + Value <br/>
 > **Type** ::= "ios_ifa" | "google_aid" | "windows_aid" <br/>
 > **Value** ::= device's AdID
+
+**B. Response**
+
+**Fatal error:**
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**error** | _string_ | Short description of the fatal error.
+
+**Success:**
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**success** | _array_ of _string_| Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
+
+**Mixed results:**
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
+**success** | _array_ of _string_ | Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
+
+**C. EXAMPLES**
+
+**Generic valid data structure**
+
+    [devices] => Array
+        (
+            [0] => Array
+                (
+                    [wirelessName] => 'wn 1'
+                    [hardwareID] => '6E:AA:40:F4:8F:DA'
+                )
+
+            [1] => Array
+                (
+                    [wirelessName] => 'wn 2'
+                    [hardwareID] => 'D8:16:13:AB:28:AD'
+                )
+
+        )
+    [listenerID] => 'B1:C2:FC:D9:CD:10'
+    [type] => 'image'
+    [data] => 'https://wirelessregistry.com/assets/img/default-pin.png'
+	[AdID] => 'ios_ifa^AAAAAAAAA-BBBB-CCCC-1111-222222220000
+
 
 
 
