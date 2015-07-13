@@ -133,8 +133,8 @@ PIN TYPE | DATA TYPE | DESCRIPTION
 **profilePhone** | _phone number_ | Phone number if the owner has decided to share.
 **hardwareDefinition** | _url_ | HardwareIDs may have a hardware definition such as a Wolfram Connected Devices URL: http://devices.wolfram.com/devices/vitagoods-wrist-bluetooth-travel-blood-pressure-monitor-vs-4300.html.
 **registeredLatLong** | _number/number_ | An owner may specify a lat-long they wish to associate with registered beacon IDs. Latitudes (-90 to 90), Longitudes (-180 to 180). Beacon IDs may have values available.
-**bleMacAddress** | _0123456789ab_ | Some registered beacon IDs may have MACs associated to them by their owner.
-**linkedName** | _string_ | Returns the Name linked to the Mac or beacon (only for Verified MACs and beacons).
+**bleMacAddress** | _0123456789ab_ | Some registered beacon IDs may have MAC addresses associated to them by their owner.
+**linkedName** | _string_ | Returns the Name linked to the Mac or beacon (only for Verified MAC addresses and beacons).
 **profilePublicName** | _string_ | Returns the Public Name of the user account linked to the Mac or beacon.
 
 **c) Custom pins**
@@ -148,7 +148,7 @@ A custom pin type's length is restricted to between 25 and 255 characters. No cu
 
 Custom pin types are defined by the Proximal API user. Pins cannot be retrieved via the Proximal API unless the pin type is included in the query. In this way, custom pins can be kept private, with pin types known only to the developer. You can share your custom pin types with anyone you want to give access to your pins.
 
-Custom pins can be created on an array of one to ten wirelessName, hardwareID, beaconID, or wirelessName~hardwareID combinations at a time. A custom pin, for example, could be an application pinning a message to the top five strongest MAC address signals in a room. Other instances of the same app can then retrieve that pin by checking all detected MACs against the Proximal API and with the correct, app-specific custom pin type known only to that app.
+Custom pins can be created on an array of one to ten wirelessName, hardwareID, beaconID, or wirelessName~hardwareID combinations at a time. A custom pin, for example, could be an application pinning a message to the top five strongest MAC address signals in a room. Other instances of the same app can then retrieve that pin by checking all detected MAC addresses against the Proximal API and with the correct, app-specific custom pin type known only to that app.
 
 Unlike standard pins, custom pins cannot be retrieved without being explicitly requested in the query. The requester must know the custom pin type and query for that type. There are currently no pin type parameter ranges or wildcards.
 
@@ -174,7 +174,7 @@ Careful use of the startDate and endDate parameters on the GET functions will en
 
 Several parameters are arrays that allow for large numbers of strings. For example, wireless devices may encounter and check 10-100 wireless names and MAC addresses in an array. The Proximal API adjusts its response output so a single pin is returned to represent multiple identical pins with identical addedDate(time/second). The wireless strings returning the same pin are listed in the output. Likewise, getCount will also return the full count of all pins, each counted individually.
 
-For example, an application may pin a single custom pin to an array of ten detected wireless names (such as the ten strongest surrounding signals). It uses a single Proximal API create call to do so. A second device in the area, with the same application, submits a Proximal API get call to all 50 detectable surrounding wireless names. In response, it immediately receives the first device’s single pin (with the group indicated) — rather than ten identical pins — despite all ten MACs being in the array of the 50 total nearby checked MACs.
+For example, an application may pin a single custom pin to an array of ten detected wireless names (such as the ten strongest surrounding signals). It uses a single Proximal API create call to do so. A second device in the area, with the same application, submits a Proximal API get call to all 50 detectable surrounding wireless names. In response, it immediately receives the first device’s single pin (with the group indicated) — rather than ten identical pins — despite all ten MAC addresses being in the array of the 50 total nearby checked MAC addresses.
 
 ###Data Security
 
@@ -337,7 +337,7 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **endDate** | optional | _string_ | string-formatted date on the pattern "_MM/DD/YYYY hh:mm:ss_" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request.
 **limit** | optional | _number_ | any integer | Number indicates how many pins to return to the response. No limit returns all pins. Count calls in next section are useful when used with limit and skip calls.
 **skip** | optional | _number_ | any integer | Number indicates how many pins to skip before response continues. Used for paging along with limit.
-**minHardwareIDs** | optional | _number_ | any integer | Valid only for MACs, returns only pins that are sent to minhardware's number or more MACs. 
+**minHardwareIDs** | optional | _number_ | any integer | Valid only for MAC addresses, returns only pins that are sent to minhardware's number or more MAC addresses. 
 
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
