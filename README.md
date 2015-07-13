@@ -339,9 +339,129 @@ PARAMETER | TYPE  | DESCRIPTION
 **skip** | optional | _number_ | any integer | Number indicates how many pins to skip before response continues. Used for paging along with limit.
 **minHardwareIDs** | optional | _number_ | any integer | Valid only for MACs, returns only pins that are sent to minhardware's number or more MACs. 
 
+> **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
+> **Note:** Pin GET responses deliver pins in reverse time order, most recent pins first.
 
+> **Note:** The default time value for **startDate** is _00:00:00_. The default time value for **endDate** is _23:59:59_.
 
+> **AdID Grammar:** <br/>
+> **AdID** ::= Type + "^" + Value <br/>
+> **Type** ::= "ios_ifa" | "google_aid" | "windows_aid" <br/>
+> **Value** ::= device's AdID
+
+**B. Response**
+
+**Fatal error:**
+
+PARAMETER | TYPE | DESCRIPTION
+--------- | ------- | -------
+**error** | _string_ | Short description of the fatal error.
+
+**Success:**
+
+PARAMETER | TYPE  | DESCRIPTION
+--------- | -------- | -----------
+**result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**.
+**meta** | JSON _array_ | Contains metainformation about the result.
+**pins** | JSON _array_ | Contains the pins retrieved by the request. 
+
+{
+    "meta": {
+        "count": 5
+    },
+    "pins": [
+        {
+            "hardwareID": "6E:AA:40:F4:8F:DA",
+            "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
+            "label": "",
+            "type": "image",
+            "createdAt": '02/25/2014 00:00:00'
+        },
+        {
+            "hardwareID": "6E:AA:40:F4:8F:DA",
+            "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
+            "label": "",
+            "type": "image",
+            "createdAt": '02/15/2014 00:00:00'
+        },
+        {
+            "wirelessName": "wn 1",
+            "data": "data test",
+            "label": "label test",
+            "type": "custom-type-label-of-my-own-design",
+            "createdAt": '02/17/2014 00:00:00'
+        },
+        {
+            "wirelessName": "wn 1",
+            "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
+            "label": "label test",
+            "type": "image",
+            "createdAt": '02/15/2014 00:00:00'
+        },
+        {
+            "wirelessName": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00000~00000",
+            "data": "data test1",
+            "label": "",
+            "type": "text",
+            "createdAt": '02/15/2014 00:00:00'
+        }
+    ]
+}
+
+**Mixed results:**
+
+PARAMETER | TYPE | DESCRIPTION
+--------- | -------- | -----------
+**error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
+**success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters.
+
+ **C. Examples** 
+**General valid data structure**
+
+devices] => Array
+    (
+        [0] => Array
+            (
+                [wirelessName] => 'wn 1'
+                [hardwareID] => '6E:AA:40:F4:8F:DA'
+            )
+        [1] => Array
+            (
+                [wirelessName] => 'wn 2'
+            )
+        [2] => Array
+            (
+                [hardwareID] => 'D8:16:13:AB:28:AD'
+            )
+        [3] => Array
+            (
+                [wirelessNames] => Array
+                (
+                    [0] => 'wn 1'
+                    [1] => 'wn 2'
+                )
+            )
+        [4] => Array
+            (
+                [hardwareIDs] => Array
+                (
+                    [0] => '6E:AA:40:F4:8F:DA'
+                    [1] => 'D8:16:13:AB:28:AD'
+                )
+            )
+    )
+    [types] => Array
+    (
+        [0] => 'image'
+        [1] => 'custom-type-label-of-my-own-design'
+    )
+[listenerID] => 'B1:C2:FC:D9:CD:10'
+[startDate] => '01/01/2014 00:00:00'
+[endDate] => '01/31/2014 00:00:00'
+
+>> **WARNING:**
+The calls with the following structure have been deprecated. Please convert your old calls to the new format.
 
 
 
