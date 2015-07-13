@@ -251,7 +251,7 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **Save pins** | POST | https://api.wirelessregistry.com/v1/pins
 **Get pins** | GET | https://api.wirelessregistry.com/v1/pins
 
-###Save Pins
+####1. Save Pins
 
 **a) Parameters**
 
@@ -279,19 +279,19 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 **Fatal error:**
 
-PARAMETER | TYPE | DESCRIPTION
+**PARAMETER** | **TYPE** | **DESCRIPTION**
 --------- | ------- | -------
 **error** | _string_ | Short description of the fatal error.
 
 **Success:**
 
-PARAMETER | TYPE  | DESCRIPTION
+**PARAMETER** | **TYPE**  | **DESCRIPTION**
 --------- | -------- | -----------
 **success** | _array_ of _string_| Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
 
 **Mixed results:**
 
-PARAMETER | TYPE  | DESCRIPTION
+**PARAMETER** | **TYPE**  | **DESCRIPTION**
 --------- | -------- | -----------
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
 **success** | _array_ of _string_ | Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
@@ -319,11 +319,11 @@ PARAMETER | TYPE  | DESCRIPTION
     [data] => 'https://wirelessregistry.com/assets/img/default-pin.png'
     [AdID] => 'ios_ifa^AAAAAAAAA-BBBB-CCCC-1111-222222220000
 
-###Get Pins
+####2. Get Pins
 
 **a) Parameters**
 
-**PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE** | ** DESCRIPTION**
+**PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE** | **DESCRIPTION**
 ------|-----|------| ------ | ------ 
 **devices** | required | _array_ | **wirelessName**, **hardwareID**, **wirelessNames**, **hardwareIDs**, or a pair of **wirelessName~hardwareID** | The set of identifiers for the devices from where to retrieve the pins.
 **devices → wirelessName** | required / optional (see note below) | _string_ | valid wireless name | Wireless name from where to retrieve the pins.
@@ -354,13 +354,13 @@ PARAMETER | TYPE  | DESCRIPTION
 
 **Fatal error:**
 
-PARAMETER | TYPE | DESCRIPTION
+**PARAMETER** | **TYPE** | **DESCRIPTION**
 --------- | ------- | -------
 **error** | _string_ | Short description of the fatal error.
 
 **Success:**
 
-PARAMETER | TYPE  | DESCRIPTION
+**PARAMETER** | **TYPE**  | **DESCRIPTION**
 --------- | -------- | -----------
 **result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**.
 **meta** | JSON _array_ | Contains metainformation about the result.
@@ -410,15 +410,15 @@ PARAMETER | TYPE  | DESCRIPTION
     	]
 	}
 
-
 **Mixed results:**
 
-PARAMETER | TYPE | DESCRIPTION
+**PARAMETER** | **TYPE** | **DESCRIPTION**
 --------- | -------- | -----------
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
 **success** | JSON _array_ | **meta** and **pins** retrieved for the valid request parameters.
 
 **c) Examples** <br/>
+
 **General valid data structure**
 
 	[devices] => Array
@@ -484,13 +484,98 @@ The calls with the following structure have been deprecated. Please convert your
 	[startDate] => '01/01/2014 00:00:00'
 	[endDate] => '01/31/2014 00:00:00'
 
+--
+
+##Commands
+
+###Introduction
+
+Commands are a set of helper functions of the API, designed to perform specific auxiliary tasks.
+
+####1. Count
+
+**a) Endpoint**
+
+GET https://api.wirelessregistry.com/apis/proximal/v1/commands/count
+
+**b) Parameters**
+
+**PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE**
+---------------- | ------------------- | ------------- | -------------
+**wirelessNames** | required | _array_ of _string_ | valid wireless name | Wireless names from where to retrieve the pins. 
+**hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware Ids of the devices from where to retrieve the pins.
+**listenerID** | required | _string_ | Hardware UD of the device's network interface card used to send the API call.
+**types** | required | _array_ of _string_ | valid standard or custom pin type (max 255 chars) | Type of the pin being added.
+**startDate** | optional | _string_ | string-formatted date on the pattern "_MM/DD/YYYY hh:mm:ss_" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request.
+**endDate** | optional | _string_ | string-formatted date on the pattern "_MM/DD/YYYY hh:mm:ss_" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request.
+
+>**Note:** The default time value for **startDate** is _00:00:00_.  The default time value for **endDate** is _23:59:59_.
+
+**c) Response** <br/>
+
+**Fatal error**
+
+**PARAMETER** | **TYPE** | **DESCRIPTION**
+------- | ------- | ------
+**error** | _string_ | Short description of fatal error.
+
+**Success**
+
+**PARAMETER** | **TYPE** | **DESCRIPTION**
+------- | ------- | ------
+**result** | JSON _array_ | Contains two distinct elements: **meta** and **pins**.
+**meta** | JSON _array_ | Contains metainformation about the result. 
+**pins** | JSON _array_ | Contains the count of pins retrieved by the request, for each valid **wirelessName** or **hardwareID**. Each pin type is counted in a separate entry.
+
+	{
+    	"meta": {
+        	"count": 6
+    	},
+    	"pins": [
+        {
+            "wirelessName": "test",
+            "count": 0
+        },
+        {
+            "wirelessName": "myotherrideisatitan",
+            "count": 0
+        },
+        {
+            "hardwareID": "6E:AA:40:F4:8F:DA",
+            "type": "image",
+            "count": 2
+        },
+        {
+            "hardwareID": "6E:AA:40:F4:8F:DA",
+            "type": "text",
+            "count": 1
+        },
+        {
+            "hardwareID": "D8:16:1A:B2:8C:AD",
+            "type": "image",
+            "count": 2
+        },
+        {
+            "hardwareID": "D8:16:1A:B2:8C:AD",
+            "type": "text",
+            "count": 1
+        }
+    	]
+	}
+
+
+___-_---_-----------------
 
 
 
 
 
 
+>**wirelessNames** is a structured array.  The first field contains a valid wireless name or beacon ID of the device that the app wants to authenticate. The remaining fields are 5-digit strings collected by the app that the device being authenticated has emitted. Devices generate these codes according to the The Wireless Registry authentication algorithm using their authentication key.
 
+**c) Return**
+
+	{"Authentication_level":X}, where X is a value between 1 and N. It denotes 	the number of correctly generated and sequenced authentication codes.  See
 
 
 
@@ -533,7 +618,7 @@ SERVER TYPE | URL
 
 ###A. Parameters
 
-PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
+PARAMETER | REQUIRED / OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 --------- | ----------------- | ------- | -------- | -----------
 **devices** | required | _array_ | one or more valid **wirelessName** and **hardwareID** pairs | The set of identifiers for the devices where the content must be pinned
 **wirelessName** | required | _string_ | valid Wireless Name | Wireless Name where the pin should be added
@@ -604,7 +689,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 ###A. Parameters
 
-PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
+PARAMETER | REQUIRED / OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 --------- | ----------------- | ------- | -------- | -----------
 **wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
 **hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
@@ -718,7 +803,7 @@ PARAMETER | TYPE(s)  | DESCRIPTION
 
 ###A. Parameters
 
-PARAMETER | REQUIRED/OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
+PARAMETER | REQUIRED / OPTIONAL | TYPE(s) | VALUE(s) | DESCRIPTION
 --------- | ----------------- | ------- | -------- | -----------
 **wirelessNames** | required | _array_ of _string_ | valid Wireless Name | Wireless Names from where to retrieve the pins
 **hardwareIDs** | required | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the devices from where to retrieve the pins
