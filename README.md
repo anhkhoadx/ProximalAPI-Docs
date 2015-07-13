@@ -176,6 +176,13 @@ Several parameters are arrays that allow for large numbers of strings. For examp
 
 For example, an application may pin a single custom pin to an array of ten detected wireless names (such as the ten strongest surrounding signals). It uses a single Proximal API create call to do so. A second device in the area, with the same application, submits a Proximal API get call to all 50 detectable surrounding wireless names. In response, it immediately receives the first device’s single pin (with the group indicated) — rather than ten identical pins — despite all ten MAC addresses being in the array of the 50 total nearby checked MAC addresses.
 
+####Pinning to Geohashes
+In addition to wireless signals, Proximal API also allows pins to be associated with a geohash. Currently, we support pinning to 9- and 8-character hashes. The retrieval, based on a given geohash, retrieves all pins in that geohash as well as all the adjecant geohashes of the same precision. If the client wishes to spread the search to larger polygon objects, teh client has to precompute the necessary geohashes.
+
+When pinning or retrieving pins, the client must use the following template:
+- wirelessName := "geohash::=" + computed_geohash
+- mac := _empty_
+
 ###Data Security
 
 ####Data Ownership
