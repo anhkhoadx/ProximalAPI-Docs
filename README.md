@@ -111,7 +111,7 @@ PIN TYPE | DATA TYPE | DATA CONTENT VALUE(s) | DESCRIPTION
 
 Standard pins must be created on a single wireless name or wireless name ~ hardware ID combination at a time. For example, a standard pin could be pinning a photo to the wireless name of a restaurant. Any app on any device could check the Proximal API for content associated with that restaurant's wireless name, immediately get the pin, and then render the photo.
 
-**Note:** The Proximal API can also be queried with no pin type parameter specified. It will respond with all standard pins associated to the checked wireless name(s), but not with custom pins or profile pins.
+> **Note:** The Proximal API can also be queried with no pin type parameter specified. It will respond with all standard pins associated to the checked wireless name(s), but not with custom pins or profile pins.
 
 Standard pins are publicly viewable unless deleted or blocked by the wireless name owner. When an application requests pins associated to a wireless name or hardware ID it encounters, it can request all standard (public) pins, or – in the interest of not being overwhelmed – it may request only a certain type of standard pin, such as streamingMedia. Because a large number of wireless names and hardware IDs can be checked at once (for example, 200 wireless names detected in a single location), pin types can be used to refine the search to the app developer’s needs.
 
@@ -252,9 +252,10 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **Get pins** | GET | https://api.wirelessregistry.com/v1/pins
 
 ###Save Pins
+
 **A. Parameters**
 
-**PARAMETER** | **REQUIRED / OPTIONAL** | **Type** | **VALUE** | ** DESCRIPTION**
+**PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE** | ** DESCRIPTION**
 ------|-----|------| ------ | ------ 
 **devices** | required | _array_ | one or more valid **wirelessName** and **hardwareID** pairs | The set of identifiers for the devices where the content must be pinned.
 **devices → wirelessName** | required / optional (see note below) | _string_ | valid wireless name | Wireless name where the pin should be added.
@@ -278,25 +279,24 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 
 **Fatal error:**
 
-PARAMETER | TYPE(s) | Description
+PARAMETER | TYPE | DESCRIPTION
 --------- | ------- | -------
 **error** | _string_ | Short description of the fatal error.
 
 **Success:**
 
-PARAMETER | TYPE(s)  | DESCRIPTION
+PARAMETER | TYPE  | DESCRIPTION
 --------- | -------- | -----------
 **success** | _array_ of _string_| Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
 
 **Mixed results:**
 
-PARAMETER | TYPE(s)  | DESCRIPTION
+PARAMETER | TYPE  | DESCRIPTION
 --------- | -------- | -----------
 **error** | _array_ of _string_ | Each element has an error message, specifying which (**wirelessName**, **hardwareID**) pair caused the error, as well as details about the nature of the error.
 **success** | _array_ of _string_ | Each element has a confirmation message, specifying which (**wirelessName**, **hardwareID**) pair was processed successfully.
 
-**C. EXAMPLES**
-
+**C. Examples**
 **Generic valid data structure**
 
     [devices] => Array
@@ -318,6 +318,36 @@ PARAMETER | TYPE(s)  | DESCRIPTION
     [type] => 'image'
     [data] => 'https://wirelessregistry.com/assets/img/default-pin.png'
 	[AdID] => 'ios_ifa^AAAAAAAAA-BBBB-CCCC-1111-222222220000
+
+###Get Pins
+
+**A. Parameters**
+
+**PARAMETER** | **REQUIRED / OPTIONAL** | **TYPE** | **VALUE** | ** DESCRIPTION**
+------|-----|------| ------ | ------ 
+**devices** | required | _array_ | **wirelessName**, **hardwareID**, **wirelessNames**, **hardwareIDs**, or a pair of **wirelessName~hardwareID** | The set of identifiers for the devices from where to retrieve the pins.
+**devices → wirelessName** | required / optional (see note below) | _string_ | valid wireless name | Wireless name from where to retrieve the pins.
+**devices → hardwareID** | required / optional (see note below) | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device from where to retrieve the pins.
+**devices → wirelessNames** | required / optional (see note below) | _array_ of _ string_ | valid wireless name | Wireless names from where to retrieve the pins.
+**devices → hardwareIDs** | required / optional (see note below) | _array_ of _string_ | valid MAC address or IMEI identifier | Hardware IDs of the device from where to retrieve the pins.
+**listenerID** | required | _string_ | valid MAC address or IMEI identifier | Hardware ID of the device's network interface card used to send the API call.
+**AdID** | optional | _string_ | see grammar below | Valid mobile advertisement identifier.
+**types** | required | _array_ of _string_ | valid standard or custom pin type (max 255 characters) | Type of the pin being retrieved.
+**startDate** | optional | _string_ | string-formatted date on the pattern "_MM/DD/YYYY hh:mm:ss_" (month/day/year hours:minutes:seconds) | The beginning of the time interval that will limit the request.
+**endDate** | optional | _string_ | string-formatted date on the pattern "_MM/DD/YYYY hh:mm:ss_" (month/day/year hours:minutes:seconds) | The end of the time interval that will limit the request.
+**limit** | optional | _number_ | any integer | Number indicates how many pins to return to the response. No limit returns all pins. Count calls in next section are useful when used with limit and skip calls.
+**skip** | optional | _number_ | any integer | Number indicates how many pins to skip before response continues. Used for paging along with limit.
+**minHardwareIDs** | optional | _number_ | any integer | Valid only for MACs, returns only pins that are sent to minhardware's number or more MACs. 
+
+
+
+
+
+
+
+
+
+
 
 
 
