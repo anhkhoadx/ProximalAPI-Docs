@@ -286,6 +286,12 @@ PARAMETER | TYPE(s) | DESCRIPTION
 --------- | -------- | ----------
 **error** | _string_ | Short description of the fatal error.
 
+**Fatal Error:**
+
+PARAMETER | TYPE(s)  | DESCRIPTION
+--------- | -------- | -----------
+**error** | _string_ | short description of the fatal error
+
 **Success:**
 PARAMETER | TYPE(s)  | DESCRIPTION
 --------- | -------- | -----------
