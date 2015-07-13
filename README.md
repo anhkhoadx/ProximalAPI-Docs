@@ -366,12 +366,12 @@ PARAMETER | TYPE  | DESCRIPTION
 **meta** | JSON _array_ | Contains metainformation about the result.
 **pins** | JSON _array_ | Contains the pins retrieved by the request. 
 
-{
+	{
 
-"meta": {
-        "count": 5
-    },
-    "pins": [
+	"meta": {
+        	"count": 5
+    	},
+    	"pins": [
         {
             "hardwareID": "6E:AA:40:F4:8F:DA",
             "data": "https://reg.wirelessregistry.com/assets/img/default-pin.png",
@@ -407,10 +407,9 @@ PARAMETER | TYPE  | DESCRIPTION
             "type": "text",
             "createdAt": '02/15/2014 00:00:00'
         }
-    ]
-}
+    	]
+	}
 
-]
 
 **Mixed results:**
 
