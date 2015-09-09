@@ -217,9 +217,9 @@ Although it may be cumbersome, it is similarly possible to email directly to a b
 
 ####Wireless Name Public URL for public Pins
 
-All wireless strings can have public content associated with them, such as standard pins, visible at www.WirelessRegistry.com/WirelessName or www.WirelessRegistry.com/HardwareID, as determined by the registered owner. 
+All wireless strings can have public content associated with them, such as standard pins, visible at https://twrapp.wirelessregistry.com/WirelessName or https://twrapp.wirelessregistry.com/HardwareID, as determined by the registered owner. 
 
-www.WirelessRegistry.com/WirelessName~HardwareID will take the user directly to the content associated to that particular Wireless Name and hardware ID combination. This also works for beacon IDs in the standard beacon Type 1 format, as well as for all other registerable signals (for example: www.WirelessRegistry.com/E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00001~00022.)
+https://twrapp.wirelessregistry.com/WirelessName~HardwareID will take the user directly to the content associated to that particular Wireless Name and hardware ID combination. This also works for beacon IDs in the standard beacon Type 1 format, as well as for all other registerable signals (for example: https://twrapp.wirelessregistry.com/E2C56DB5-DFFB-48D2-B060-D0F5A71096E0~00001~00022).
 
 ###Miscelaneous
 
