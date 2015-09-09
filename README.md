@@ -97,7 +97,7 @@ The system supports three main categories of pins: **standard pins**, **profile 
 
 **a) Standard pins**
 
-Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are _always_ visible on our portal (https://reg.wirelessregistry.com) and are therefore not suited for private information.
+Standard pin types are defined by The Wireless Registry, with clear rules and restrictions for each standard type. They are _always_ visible and are therefore not suited for private information.
 
 The system currently supports the following standard pin types:
 
