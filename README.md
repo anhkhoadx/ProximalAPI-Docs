@@ -180,17 +180,17 @@ For example, an application may pin a single custom pin to an array of ten detec
 In addition to wireless signals, Proximal API also allows pins to be associated with a geohash. Currently, we support pinning to 9- and 8-character hashes. The retrieval, based on a given geohash, retrieves all pins in that geohash as well as all the adjecant geohashes of the same precision. If the client wishes to spread the search to larger polygon objects, the client has to precompute the necessary geohashes.
 
 To post a pin to a geohash specify the following parameters:
-1) lat ::= lat coordinate
-2) long ::= long coordiante
-3) set the geopin parameter to true
-4) set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-charachter precision)
+- lat ::= lat coordinate
+- long ::= long coordiante
+- set the geopin parameter to true
+- set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-charachter precision)
 
 To get pins from a geohash specify the specify the following parameters:
-1) lat ::= lat coordinate
-2) long ::= long coordiante
-3) set the geopin parameter to true
-4) set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-charachter precision)
-5) set the startDate (ddMMYYYY) from which to start searching for pins. Note that a startDate cannot be older than 30 days from the current date.
+- lat ::= lat coordinate
+- long ::= long coordiante
+- set the geopin parameter to true
+- set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-charachter precision)
+- set the startDate (ddMMYYYY) from which to start searching for pins. Note that a startDate cannot be older than 30 days from the current date.
 
 ###Data Security
 
