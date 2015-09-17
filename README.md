@@ -281,6 +281,10 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **type** | required | _string_ | valid standard or custom pin type (max 255 characters) | Type of the pin being added.
 **data** | required | _text_ | max 65K chars | The content added, depending on the type used.
 **label** | optional | _text_ | max 255 chars, empty string by default | Unstructured field for tagging, captioning, labeling, or otherwise describing the pin's content.
+**lat** | optional | _float_ |  | lat coordinate for geohash pinning.
+**long** | optional | _float_ |  | long coordinate for geohash pinning.
+**geopin** | optional | _bool_ | false by default | indicates that the pin is posted to a geohash.
+**geoproximity** | optional | _CLOSE_ | _NEAR_ | both by default | see text above.
 
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
@@ -354,6 +358,10 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **limit** | optional | _number_ | any integer | Number indicates how many pins to return to the response. No limit returns all pins. Count calls in next section are useful when used with limit and skip calls.
 **skip** | optional | _number_ | any integer | Number indicates how many pins to skip before response continues. Used for paging along with limit.
 **minHardwareIDs** | optional | _number_ | any integer | Valid only for MAC addresses, returns only pins that are sent to minhardware's number or more MAC addresses. 
+**lat** | optional | _float_ |  | lat coordinate for geohash pinning.
+**long** | optional | _float_ |  | long coordinate for geohash pinning.
+**geopin** | optional | _bool_ | false by default | indicates that the pin is posted to a geohash.
+**geoproximity** | optional | _CLOSE_ | _NEAR_ | both by default | see text above.
 
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
