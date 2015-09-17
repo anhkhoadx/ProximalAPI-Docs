@@ -284,7 +284,7 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **lat** | optional | _float_ |  | lat coordinate for geohash pinning.
 **long** | optional | _float_ |  | long coordinate for geohash pinning.
 **geopin** | optional | _bool_ | false by default | indicates that the pin is posted to a geohash.
-**geoproximity** | optional | _CLOSE_ | _NEAR_ | both by default | see text above.
+**geoproximity** | optional | _CLOSE_ or _NEAR_ | both by default | see text above.
 
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
@@ -361,7 +361,7 @@ Pins cannot be edited and can be deleted only via the action of the wireless nam
 **lat** | optional | _float_ |  | lat coordinate for geohash pinning.
 **long** | optional | _float_ |  | long coordinate for geohash pinning.
 **geopin** | optional | _bool_ | false by default | indicates that the pin is posted to a geohash.
-**geoproximity** | optional | _CLOSE_ | _NEAR_ | both by default | see text above.
+**geoproximity** | optional | _CLOSE_ or _NEAR_ | both by default | see text above.
 
 > **Note:** If the pin type is a standard one, the **hardwareID** in a pair becomes optional. If the pin type is a custom one, either the **wirelessName** or the **hardwareID** in a pair can be missing, as long as they are not both missing at the same time.
 
