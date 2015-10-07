@@ -183,13 +183,13 @@ To post a pin to a geohash specify the following parameters:
 - lat ::= lat coordinate
 - long ::= long coordiante
 - set the geopin parameter to true
-- set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-charachter precision)
+- set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-character precision)
 
 To get pins from a geohash specify the specify the following parameters:
 - lat ::= lat coordinate
 - long ::= long coordiante
 - set the geopin parameter to true
-- set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-charachter precision)
+- set the geoproximity parameter to either NEAR (8-character precision) or CLOSE (9-character precision)
 - set the startDate (ddMMYYYY) from which to start searching for pins. Note that a startDate cannot be older than 30 days from the current date.
 
 ###Data Security
